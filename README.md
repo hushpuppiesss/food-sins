@@ -1,1 +1,1 @@
-# compsci-final-project
+# FOOD SINS
