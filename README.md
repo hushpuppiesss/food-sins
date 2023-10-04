@@ -38,3 +38,7 @@ items
 - cute clothing
   
 ## turn-based boss battle
+ - once the 30 minute mark hits a theme starts playing and the boss comes from the of the sceeen to the bottom
+ - the  a pokemon esque transition plays
+ - in the boss fight your strongest towers will be summoned in your aid only maximum of 4 in total including the player
+ - if you fail the fight the boss will eat your finished pizza 
