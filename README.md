@@ -3,7 +3,9 @@
  a final project for a computer science course that attempts to combine elements from JRPGs, tower defense games, and bullet hell survival in the context of a cute goose trying to save his family's business - restaurants. 
 
 ## story
-our hero - goose - is faced with the responsbility of saving the family business. the quacksay family owns multiple restaurants around the world, from italy, japan, china, colombia, the philippines, and the united states. he must take over and manage each restaurant by fulfilling orders and filling in as the executive chef. can goose save the restaurant and save his family from going bankrupt?! (? idk might revamp story later)
+world renowned restaurant chain goose house is in peril when their rival restaurant, foie gras pour la vie,
+
+our hero - goose - is faced with the responsbility of saving the family business. the quacksay family owns multiple restaurants around the world, from italy, japan, china, colombia, the philippines, the united states, and so on. he must take over and manage each restaurant by fulfilling orders and filling in as the executive chef. can goose save the restaurant and save his family from going bankrupt?!
 
 ## game mechanics
 so... we've taken inspiration from these types of games:
