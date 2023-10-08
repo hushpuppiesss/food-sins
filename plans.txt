@@ -1,9 +1,9 @@
-- things to learn
-- loading the window
+# things to learn
+- loading the window - DONE
 - buttons
 - changing screens
 
-- menu
+# menu
 - play
 - ask the player for their name
 - ask the player to name their restaurant
@@ -21,28 +21,28 @@
   - (maybe) dashing 
   - 
 
-- turrets
+# turrets
 
-- letter
+# letters
 
-classes we need to make
-- player
+# classes we need to make
+## - player
   - name
   - statistics (hp, attack, defense, speed)
   - equipment (weapons or armor)
   - cosmetics
-- screens
+## - screens
   - background
   - music
   - buttons
-- enemies
+## - enemies
   - statistics (hp, attack, defense, speed)
   - target 
   - whether
-- boss
+## - boss
   - moves
   - drop equipment
-- dish
+## - dish
   - health
   - ingredients present
 - items
