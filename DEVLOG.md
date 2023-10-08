@@ -21,7 +21,18 @@
   - (maybe) dashing 
   - 
 
-# turrets
+# turrets 
+- Turrets have pre-placement
+- Enemy Detection
+- Not Hitting player
+- Different upgrades and spices to shoot?
+- Cost currency to place
+- You place them by going to a build menu and clicking on the turret icon and clicking on a highlighted yellow square OR clicking on build site
+- 6 different types of turrets
+- 4 different upgrades
+- Turrets can protect tower but will be destroyed by enemies once their hp runs out
+- Can be healed*
+
 
 # letters
 
