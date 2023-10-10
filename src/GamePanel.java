@@ -32,7 +32,8 @@ public class GamePanel extends JPanel implements Runnable{
     int playerSpeed = 4;
 
     // screen setup
-    public GamePanel() {
+    public GamePanel() 
+    {
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
         this.setBackground(Color.black);
         this.setDoubleBuffered(true); // improves rendering performance as drawing will be done in an offscreen painting buffer
@@ -41,7 +42,8 @@ public class GamePanel extends JPanel implements Runnable{
     }
 
     // game thread
-    public void startGameThread() {
+    public void startGameThread() 
+    {
         gameThread = new Thread (this); // passing game panel to thread constructor, initiating the thread
         gameThread.start(); // will call the run method
     }
@@ -56,32 +58,36 @@ public class GamePanel extends JPanel implements Runnable{
                                                                 // draw interval seconds later
 
         // core game loop
-        while (gameThread != null) {
-
+        while (gameThread != null)
+        {
             // 1 UPDATE : updating information such as character positions
             update();
             // 2 DRAW: drawing screen with the updated info
             repaint();
 
-            try {
+            try 
+            {
                 double remainingTime = nextDrawTime - System.nanoTime(); // document this later
                 remainingTime = remainingTime/1000000;
 
-                if (remainingTime< 0){
+                if (remainingTime< 0)
+                {
                     remainingTime = 0;
                 }
 
                 Thread.sleep((long) remainingTime);
 
                 nextDrawTime += drawInterval;
-            } catch (InterruptedException e) {
+            } 
+            catch (InterruptedException e)
+            {
                 throw new RuntimeException(e);
             }
-
         }
     }
 
-    public void update() { // to update information
+    public void update() 
+    { // to update information
 
         // player movement
         if(keyH.upPressed){ // shorthand for keyH.upPressed being true
@@ -99,8 +105,8 @@ public class GamePanel extends JPanel implements Runnable{
 
     }
 
-    public void paintComponent(Graphics g) {
-    /* paintComponent is a standard method to draw things on jpanel, Graphics is a class that
+    public void paintComponent(Graphics g) 
+    { /* paintComponent is a standard method to draw things on jpanel, Graphics is a class that
     has many functions to draw objects on the screen */
 
         super.paintComponent(g);
@@ -112,7 +118,7 @@ public class GamePanel extends JPanel implements Runnable{
         g2.fillRect(playerX, playerY, tileSize, tileSize);
 
         g2.dispose(); // disposes of graphic context &   releases systems resources to save memory
-
+        
     }
 
 }
