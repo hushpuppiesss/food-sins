@@ -1,5 +1,7 @@
+package entity;
+
 import main.GamePanel;
-import main.KeyHaandler;
+import main.KeyHandler;
 
 public class Player extends Entity{
 
