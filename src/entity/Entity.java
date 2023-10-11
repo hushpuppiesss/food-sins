@@ -1,4 +1,5 @@
-package entity;// will store variables that will be used in player, enemy, turret, and npc classes
+package entity;
+// will store variables that will be used in player, enemy, turret, and npc classes
 
 public class Entity {
 
