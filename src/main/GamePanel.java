@@ -1,7 +1,10 @@
 package main;
 
+import entity.Player;
+import javax.swing.JPanel;
 import javax.swing.*;
 import java.awt.*;
+import javax.swing.JFrame;
 // java awt, api for developing gui
 
 public class GamePanel extends JPanel implements Runnable{
@@ -13,7 +16,7 @@ public class GamePanel extends JPanel implements Runnable{
     final int scale = 2;
 
     // the size that you'll see on screen - 64x tiles
-    final int tileSize = originalTileSize * scale;
+    public final int tileSize = originalTileSize * scale;
     final int maxScreenCol = 16; // n tiles wide
     final int maxScreenRow = 10; // n tiles tall
 
@@ -27,25 +30,32 @@ public class GamePanel extends JPanel implements Runnable{
 
     // FPS
     int FPS = 32;
+    // Allows for usage of key handler and game panel fom player.jav
+
+    Player player = new Player(this,keyH);
 
     // setting the player's default position, where does the player spawn?
     int playerX = 100;
     int playerY = 100;
     int playerSpeed = 4;
+    //Game State
+    public  int gameState;
+    public final int playState = 1;
+    public final int pauseState = 2;
+
 
     // screen setup
-    public GamePanel() 
-    {
+    public GamePanel() {
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
-        this.setBackground(Color.black);
+        this.setBackground(Color.BLACK );
         this.setDoubleBuffered(true); // improves rendering performance as drawing will be done in an offscreen painting buffer
         this.addKeyListener(keyH); // so that game panel can recognize key input
         this.setFocusable(true); // "focused" to receive input
     }
 
+
     // game thread
-    public void startGameThread() 
-    {
+    public void startGameThread() {
         gameThread = new Thread (this); // passing game panel to thread constructor, initiating the thread
         gameThread.start(); // will call the run method
     }
@@ -60,67 +70,46 @@ public class GamePanel extends JPanel implements Runnable{
                                                                 // draw interval seconds later
 
         // core game loop
-        while (gameThread != null)
-        {
+        while (gameThread != null) {
+
             // 1 UPDATE : updating information such as character positions
             update();
             // 2 DRAW: drawing screen with the updated info
             repaint();
 
-            try 
-            {
+            try {
                 double remainingTime = nextDrawTime - System.nanoTime(); // document this later
                 remainingTime = remainingTime/1000000;
 
-                if (remainingTime< 0)
-                {
+                if (remainingTime< 0){
                     remainingTime = 0;
                 }
 
                 Thread.sleep((long) remainingTime);
 
                 nextDrawTime += drawInterval;
-            } 
-            catch (InterruptedException e)
-            {
+            } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
+
         }
     }
 
-    public void update() 
-    { // to update information
+    public void update() { // to update information
 
-        // player movement
-        if(keyH.upPressed){ // shorthand for keyH.upPressed being true
-            playerY -= playerSpeed;
-        }
-        if(keyH.leftPressed){
-            playerX -= playerSpeed;
-        }
-        if(keyH.downPressed){
-            playerY += playerSpeed;
-        }
-        if(keyH.rightPressed){
-            playerX += playerSpeed;
-        }
 
+        player.update();
     }
-
-    public void paintComponent(Graphics g) 
-    { /* paintComponent is a standard method to draw things on jpanel, Graphics is a class that
+    public void paintComponent(Graphics g)  {
+    /* paintComponent is a standard method to draw things on jpanel, Graphics is a class that
     has many functions to draw objects on the screen */
 
         super.paintComponent(g);
 
         Graphics2D g2 = (Graphics2D)g;
-
-        g2.setColor(Color.white);
-
-        g2.fillRect(playerX, playerY, tileSize, tileSize);
-
+        player.draw(g2);
         g2.dispose(); // disposes of graphic context &   releases systems resources to save memory
-        
+
     }
 
 }
