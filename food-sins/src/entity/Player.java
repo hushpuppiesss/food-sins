@@ -13,73 +13,69 @@ public class Player extends Entity {
   GamePanel gp;
   KeyHandler keyH;
 
-  public Player(GamePanel gp, KeyHandler keyH) {
-
+  public Player(GamePanel gp, KeyHandler keyH) 
+  {
     // 
     this.gp = gp;
     this.keyH = keyH;
 
-
     setDefaultValues();
     getPlayerImage();
-    direction = "up";
   }
 
-  public void setDefaultValues() {
-
+  public void setDefaultValues() 
+  {
     x = 100;
     y = 100;
     speed = 4;
+    direction = "down";
   }
 
   public void getPlayerImage() {
 
-    try {
+    try
+    {
       //up
-      up0 = ImageIO.read(getClass().getResourceAsStream("/goosefront_walk0.png"));
-      up1 = ImageIO.read(getClass().getResourceAsStream("/goosefront_walk1.png"));
-      up2 = ImageIO.read(getClass().getResourceAsStream("/goosefront_walk2.png"));
-      up3 = ImageIO.read(getClass().getResourceAsStream("/goosefront_walk3.png"));
-      up4 = ImageIO.read(getClass().getResourceAsStream("/goosefront_walk4.png"));
-      up5 = ImageIO.read(getClass().getResourceAsStream("/goosefront_walk5.png"));
+      up0 = ImageIO.read(getClass().getResourceAsStream("/res/gooseback_walk0.png"));
+      up1 = ImageIO.read(getClass().getResourceAsStream("/res/gooseback_walk1.png"));
+      up2 = ImageIO.read(getClass().getResourceAsStream("/res/gooseback_walk2.png"));
+      up3 = ImageIO.read(getClass().getResourceAsStream("/res/gooseback_walk3.png"));
+      up4 = ImageIO.read(getClass().getResourceAsStream("/res/gooseback_walk4.png"));
+      up5 = ImageIO.read(getClass().getResourceAsStream("/res/gooseback_walk5.png"));
       //down
-      down0 = ImageIO.read(getClass().getResourceAsStream("/gooseback_walk0.png"));
-      down1 = ImageIO.read(getClass().getResourceAsStream("/gooseback_walk1.png"));
-      down2 = ImageIO.read(getClass().getResourceAsStream("/gooseback_walk2.png"));
-      down3 = ImageIO.read(getClass().getResourceAsStream("/gooseback_walk3.png"));
-      down4 = ImageIO.read(getClass().getResourceAsStream("/gooseback_walk4.png"));
-      down5 = ImageIO.read(getClass().getResourceAsStream("/gooseback_walk5.png"));
-      down0 = ImageIO.read(getClass().getResourceAsStream("/gooseback_walk0.png"));
-      down1 = ImageIO.read(getClass().getResourceAsStream("/gooseback_walk1.png"));
-      down2 = ImageIO.read(getClass().getResourceAsStream("/gooseback_walk2.png"));
-      down3 = ImageIO.read(getClass().getResourceAsStream("/gooseback_walk3.png"));
-      down4 = ImageIO.read(getClass().getResourceAsStream("/gooseback_walk4.png"));
-      down5 = ImageIO.read(getClass().getResourceAsStream("/gooseback_walk5.png"));
+      down0 = ImageIO.read(getClass().getResourceAsStream("/res/goosefront_walk0.png"));
+      down1 = ImageIO.read(getClass().getResourceAsStream("/res/goosefront_walk1.png"));
+      down2 = ImageIO.read(getClass().getResourceAsStream("/res/goosefront_walk2.png"));
+      down3 = ImageIO.read(getClass().getResourceAsStream("/res/goosefront_walk3.png"));
+      down4 = ImageIO.read(getClass().getResourceAsStream("/res/goosefront_walk4.png"));
+      down5 = ImageIO.read(getClass().getResourceAsStream("/res/goosefront_walk5.png"));
       //left
-      left0 = ImageIO.read(getClass().getResourceAsStream("/gooseleft_walk0.png"));
-      left1 = ImageIO.read(getClass().getResourceAsStream("/gooseleft_walk1.png"));
-      left2 = ImageIO.read(getClass().getResourceAsStream("/gooseleft_walk2.png"));
-      left3= ImageIO.read(getClass().getResourceAsStream("/gooseleft_walk3.png"));
-      left4= ImageIO.read(getClass().getResourceAsStream("/gooseleft_walk4.png"));
-      left5 = ImageIO.read(getClass().getResourceAsStream("/gooseleft_walk5.png"));
+      left0 = ImageIO.read(getClass().getResourceAsStream("/res/gooseleft_walk0.png"));
+      left1 = ImageIO.read(getClass().getResourceAsStream("/res/gooseleft_walk1.png"));
+      left2 = ImageIO.read(getClass().getResourceAsStream("/res/gooseleft_walk2.png"));
+      left3 = ImageIO.read(getClass().getResourceAsStream("/res/gooseleft_walk3.png"));
+      left4 = ImageIO.read(getClass().getResourceAsStream("/res/gooseleft_walk4.png"));
+      left5 = ImageIO.read(getClass().getResourceAsStream("/res/gooseleft_walk5.png"));
       //right
-      right0 = ImageIO.read(getClass().getResourceAsStream("/gooseright_walk0.png"));
-      right1 = ImageIO.read(getClass().getResourceAsStream("/gooseright_walk1.png"));
-      right2 = ImageIO.read(getClass().getResourceAsStream("/gooseright_walk2.png"));
-      right3 = ImageIO.read(getClass().getResourceAsStream("/gooseright_walk3.png"));
-      right4 = ImageIO.read(getClass().getResourceAsStream("/gooseright_walk4.png"));
-      right5 = ImageIO.read(getClass().getResourceAsStream("/gooseright_walk5.png"));
+      right0 = ImageIO.read(getClass().getResourceAsStream("/res/gooseright_walk0.png"));
+      right1 = ImageIO.read(getClass().getResourceAsStream("/res/gooseright_walk1.png"));
+      right2 = ImageIO.read(getClass().getResourceAsStream("/res/gooseright_walk2.png"));
+      right3 = ImageIO.read(getClass().getResourceAsStream("/res/gooseright_walk3.png"));
+      right4 = ImageIO.read(getClass().getResourceAsStream("/res/gooseright_walk4.png"));
+      right5 = ImageIO.read(getClass().getResourceAsStream("/res/gooseright_walk5.png"));
 
-    } catch (IOException e) {
+    } 
+    catch (IOException e) 
+    {
       e.printStackTrace();
     }
   }
 
-
-  public void update() {
+  public void update()
+  {
     // player movement
     if (keyH.upPressed) { // shorthand for keyH.upPressed being true
-      direction = "down";
+      direction = "up";
       y -= speed;
     }
     if (keyH.leftPressed) {
@@ -87,7 +83,7 @@ public class Player extends Entity {
       x -= speed;
     }
     if (keyH.downPressed) {
-      direction = "up";
+      direction = "down";
       y += speed;
     }
 
@@ -96,24 +92,49 @@ public class Player extends Entity {
       x += speed;
     }
 
+    spriteCounter++;
+
+    if(spriteCounter > 15)
+    {
+      if (spriteNum == 1)
+      {
+        spriteNum = 2;
+      }
+      else if (spriteNum == 2)
+      {
+        spriteNum = 3;
+      }
+      else if (spriteNum == 3)
+      {
+        spriteNum = 4;
+      }
+      else if (spriteNum == 4)
+      {
+        spriteNum = 5;
+      }
+      else if (spriteNum == 5)
+      {
+        spriteNum = 1;
+      }
+      
+      spriteCounter = 0;
+    }
   }
 
-  public void draw(Graphics2D g2) {
-
-    //g2.setColor(Color.white);
-    //g2.fillRect(x, y, gp.tileSize, gp.tileSize);
-
+  public void draw(Graphics2D g2) 
+  {
     BufferedImage image = null;
 
-    switch (direction) {
+    switch (direction) 
+    {
       case "up":
-        if (spriteNum ==0) {
+        if (spriteNum == 0) {
           image = up0;
         }
-        if (spriteNum ==1) {
+        if (spriteNum == 1) {
           image = up1;
         }
-        if (spriteNum ==1) {
+        if (spriteNum == 1) {
           image = up2;
         }
         if (spriteNum ==1) {
@@ -128,6 +149,7 @@ public class Player extends Entity {
         break;
       case "down": {
         if (spriteNum == 0)
+        {}
           image = down0;
       }
         if (spriteNum==1) {
@@ -186,20 +208,9 @@ public class Player extends Entity {
           image = right5;
         }
         break;
-        }
-
-
-      spriteCounter++;
-      if(spriteCounter >10 ){
-        if(spriteNum ==1){
-          spriteNum = 2;
-        }
-        else if(spriteNum == 2){
-          spriteNum =1;
-        }
-        spriteCounter = 0;
       }
+
+      g2.drawImage(image, x, y, gp.tileSize, gp.tileSize, null);
+
     }
-    g2.drawImage(image, x, y ,gp.tileSize, gp.tileSize, null);
   }
-}
