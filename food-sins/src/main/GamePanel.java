@@ -81,7 +81,8 @@ public class GamePanel extends JPanel implements Runnable{
                 double remainingTime = nextDrawTime - System.nanoTime(); // document this later
                 remainingTime = remainingTime/1000000;
 
-                if (remainingTime< 0){
+                if (remainingTime< 0)
+                {
                     remainingTime = 0;
                 }
 
@@ -95,11 +96,11 @@ public class GamePanel extends JPanel implements Runnable{
         }
     }
 
-    public void update() { // to update information
-
-
+    public void update() // to update information
+    { 
         player.update();
     }
+
     public void paintComponent(Graphics g)  {
     /* paintComponent is a standard method to draw things on jpanel, Graphics is a class that
     has many functions to draw objects on the screen */
