@@ -36,33 +36,33 @@ public class Player extends Entity {
     try
     {
       //up
-      up0 = ImageIO.read(getClass().getResourceAsStream("/res/gooseback_walk0.png"));
-      up1 = ImageIO.read(getClass().getResourceAsStream("/res/gooseback_walk1.png"));
-      up2 = ImageIO.read(getClass().getResourceAsStream("/res/gooseback_walk2.png"));
-      up3 = ImageIO.read(getClass().getResourceAsStream("/res/gooseback_walk3.png"));
-      up4 = ImageIO.read(getClass().getResourceAsStream("/res/gooseback_walk4.png"));
-      up5 = ImageIO.read(getClass().getResourceAsStream("/res/gooseback_walk5.png"));
+      up0 = ImageIO.read(getClass().getResourceAsStream("/res/player/gooseback_walk0.png"));
+      up1 = ImageIO.read(getClass().getResourceAsStream("/res/player/gooseback_walk1.png"));
+      up2 = ImageIO.read(getClass().getResourceAsStream("/res/player/gooseback_walk2.png"));
+      up3 = ImageIO.read(getClass().getResourceAsStream("/res/player/gooseback_walk3.png"));
+      up4 = ImageIO.read(getClass().getResourceAsStream("/res/player/gooseback_walk4.png"));
+      up5 = ImageIO.read(getClass().getResourceAsStream("/res/player/gooseback_walk5.png"));
       //down
-      down0 = ImageIO.read(getClass().getResourceAsStream("/res/goosefront_walk0.png"));
-      down1 = ImageIO.read(getClass().getResourceAsStream("/res/goosefront_walk1.png"));
-      down2 = ImageIO.read(getClass().getResourceAsStream("/res/goosefront_walk2.png"));
-      down3 = ImageIO.read(getClass().getResourceAsStream("/res/goosefront_walk3.png"));
-      down4 = ImageIO.read(getClass().getResourceAsStream("/res/goosefront_walk4.png"));
-      down5 = ImageIO.read(getClass().getResourceAsStream("/res/goosefront_walk5.png"));
+      down0 = ImageIO.read(getClass().getResourceAsStream("/res/player/goosefront_walk0.png"));
+      down1 = ImageIO.read(getClass().getResourceAsStream("/res/player/goosefront_walk1.png"));
+      down2 = ImageIO.read(getClass().getResourceAsStream("/res/player/goosefront_walk2.png"));
+      down3 = ImageIO.read(getClass().getResourceAsStream("/res/player/goosefront_walk3.png"));
+      down4 = ImageIO.read(getClass().getResourceAsStream("/res/player/goosefront_walk4.png"));
+      down5 = ImageIO.read(getClass().getResourceAsStream("/res/player/goosefront_walk5.png"));
       //left
-      left0 = ImageIO.read(getClass().getResourceAsStream("/res/gooseleft_walk0.png"));
-      left1 = ImageIO.read(getClass().getResourceAsStream("/res/gooseleft_walk1.png"));
-      left2 = ImageIO.read(getClass().getResourceAsStream("/res/gooseleft_walk2.png"));
-      left3 = ImageIO.read(getClass().getResourceAsStream("/res/gooseleft_walk3.png"));
-      left4 = ImageIO.read(getClass().getResourceAsStream("/res/gooseleft_walk4.png"));
-      left5 = ImageIO.read(getClass().getResourceAsStream("/res/gooseleft_walk5.png"));
+      left0 = ImageIO.read(getClass().getResourceAsStream("/res/player/gooseleft_walk0.png"));
+      left1 = ImageIO.read(getClass().getResourceAsStream("/res/player/gooseleft_walk1.png"));
+      left2 = ImageIO.read(getClass().getResourceAsStream("/res/player/gooseleft_walk2.png"));
+      left3 = ImageIO.read(getClass().getResourceAsStream("/res/player/gooseleft_walk3.png"));
+      left4 = ImageIO.read(getClass().getResourceAsStream("/res/player/gooseleft_walk4.png"));
+      left5 = ImageIO.read(getClass().getResourceAsStream("/res/player/gooseleft_walk5.png"));
       //right
-      right0 = ImageIO.read(getClass().getResourceAsStream("/res/gooseright_walk0.png"));
-      right1 = ImageIO.read(getClass().getResourceAsStream("/res/gooseright_walk1.png"));
-      right2 = ImageIO.read(getClass().getResourceAsStream("/res/gooseright_walk2.png"));
-      right3 = ImageIO.read(getClass().getResourceAsStream("/res/gooseright_walk3.png"));
-      right4 = ImageIO.read(getClass().getResourceAsStream("/res/gooseright_walk4.png"));
-      right5 = ImageIO.read(getClass().getResourceAsStream("/res/gooseright_walk5.png"));
+      right0 = ImageIO.read(getClass().getResourceAsStream("/res/player/gooseright_walk0.png"));
+      right1 = ImageIO.read(getClass().getResourceAsStream("/res/player/gooseright_walk1.png"));
+      right2 = ImageIO.read(getClass().getResourceAsStream("/res/player/gooseright_walk2.png"));
+      right3 = ImageIO.read(getClass().getResourceAsStream("/res/player/gooseright_walk3.png"));
+      right4 = ImageIO.read(getClass().getResourceAsStream("/res/player/gooseright_walk4.png"));
+      right5 = ImageIO.read(getClass().getResourceAsStream("/res/player/gooseright_walk5.png"));
 
     } 
     catch (IOException e) 
