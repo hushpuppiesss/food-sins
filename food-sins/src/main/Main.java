@@ -21,7 +21,5 @@ public class Main {
         window.setVisible(true); // can see the window
 
         gamePanel.startGameThread();
-
-
     }
 }
