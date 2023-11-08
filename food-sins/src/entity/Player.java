@@ -51,52 +51,27 @@ public class Player extends Entity {
       //up
       up0 = loadImage("/res/player/gooseback_walk0.png");
       up1 = loadImage("/res/player/gooseback_walk1.png");
-      up2 = loadImage("/res/player/gooseback_walk2.png");
-      up3 = loadImage("/res/player/gooseback_walk3.png");
-      up4 = loadImage("/res/player/gooseback_walk4.png");
-      up5 = loadImage("/res/player/gooseback_walk5.png");
       //down
       down0 = loadImage("/res/player/goosefront_walk0.png");
       down1 = loadImage("/res/player/goosefront_walk1.png");
-      down2 = loadImage("/res/player/goosefront_walk2.png");
-      down3 = loadImage("/res/player/goosefront_walk3.png");
-      down4 = loadImage("/res/player/goosefront_walk4.png");
-      down5 = loadImage("/res/player/goosefront_walk5.png");
       //left
       left0 = loadImage("/res/player/gooseleft_walk0.png");
       left1 = loadImage("/res/player/gooseleft_walk1.png");
-      left2 = loadImage("/res/player/gooseleft_walk2.png");
-      left3 = loadImage("/res/player/gooseleft_walk3.png");
-      left4 = loadImage("/res/player/gooseleft_walk4.png");
-      left5 = loadImage("/res/player/gooseleft_walk5.png");
       //right
       right0 = loadImage("/res/player/gooseright_walk0.png");
       right1 = loadImage("/res/player/gooseright_walk1.png");
-      right2 = loadImage("/res/player/gooseright_walk2.png");
-      right3 = loadImage("/res/player/gooseright_walk3.png");
-      right4 = loadImage("/res/player/gooseright_walk4.png");
-      right5 = loadImage("/res/player/gooseright_walk5.png");
-
       //up idle
       up0_idle = loadImage("/res/player/gooseback_idle0.png");
       up1_idle = loadImage("/res/player/gooseback_idle1.png");
-      up2_idle = loadImage("/res/player/gooseback_idle2.png");
-      up3_idle = loadImage("/res/player/gooseback_idle3.png");
       //down idle
       down0_idle = loadImage("/res/player/goosefront_idle0.png");
       down1_idle = loadImage("/res/player/goosefront_idle1.png");
-      down2_idle = loadImage("/res/player/goosefront_idle2.png");
-      down3_idle = loadImage("/res/player/goosefront_idle3.png");
       //left idle
       left0_idle = loadImage("/res/player/gooseleft_idle0.png");
       left1_idle = loadImage("/res/player/gooseleft_idle1.png");
-      left2_idle = loadImage("/res/player/gooseleft_idle2.png");
-      left3_idle = loadImage("/res/player/gooseleft_idle3.png");
       //right idle
       right0_idle = loadImage("/res/player/gooseright_idle0.png");
       right1_idle = loadImage("/res/player/gooseright_idle1.png");
-      right2_idle = loadImage("/res/player/gooseright_idle2.png");
-      right3_idle = loadImage("/res/player/gooseright_idle3.png");
     }
     catch (IOException e)
     {
@@ -131,23 +106,7 @@ public class Player extends Entity {
         {
           spriteNum = 1;
         }
-        if (spriteNum == 1)
-        {
-          spriteNum = 2;
-        }
-        else if (spriteNum == 2)
-        {
-          spriteNum = 3;
-        }
-        else if (spriteNum == 3)
-        {
-          spriteNum = 4;
-        }
-        else if (spriteNum == 4)
-        {
-          spriteNum = 5;
-        }
-        else if (spriteNum == 5)
+        else if (spriteNum == 1)
         {
           spriteNum = 0;
         }
@@ -182,15 +141,7 @@ public class Player extends Entity {
         {
           spriteNum = 1;
         }
-        if (spriteNum == 1)
-        {
-          spriteNum = 2;
-        }
-        else if (spriteNum == 2)
-        {
-          spriteNum = 3;
-        }
-        else if (spriteNum == 3)
+        else if (spriteNum == 1)
         {
           spriteNum = 0;
         }
@@ -198,6 +149,7 @@ public class Player extends Entity {
         spriteCounter = 0;
       }
     }
+
   }
 
   public void draw(Graphics2D g2)
@@ -213,18 +165,6 @@ public class Player extends Entity {
         if (spriteNum == 1) {
           image = up1;
         }
-        if (spriteNum == 2) {
-          image = up2;
-        }
-        if (spriteNum == 3) {
-          image = up3;
-        }
-        if (spriteNum == 4) {
-          image = up4;
-        }
-        if (spriteNum == 5) {
-          image = up5;
-        }
         break;
       case "down":
         if (spriteNum == 0) {
@@ -232,18 +172,6 @@ public class Player extends Entity {
         }
         if (spriteNum == 1) {
           image = down1;
-        }
-        if (spriteNum == 2) {
-          image = down2;
-        }
-        if (spriteNum == 3) {
-          image = down3;
-        }
-        if (spriteNum == 4) {
-          image = down4;
-        }
-        if (spriteNum == 5) {
-          image = down5;
         }
         break;
       case "left":
@@ -253,18 +181,6 @@ public class Player extends Entity {
         if (spriteNum == 1) {
           image = left1;
         }
-        if (spriteNum == 2) {
-          image = left2;
-        }
-        if (spriteNum == 3) {
-          image = left3;
-        }
-        if (spriteNum == 4) {
-          image = left4;
-        }
-        if (spriteNum == 5) {
-          image = left5;
-        }
         break;
       case "right":
         if(spriteNum == 0) {
@@ -272,18 +188,6 @@ public class Player extends Entity {
         }
         if(spriteNum == 1) {
           image = right1;
-        }
-        if(spriteNum == 2) {
-          image = right2;
-        }
-        if(spriteNum == 3) {
-          image = right3;
-        }
-        if(spriteNum == 4) {
-          image = right4;
-        }
-        if(spriteNum == 5) {
-          image = right5;
         }
         break;
       case "up_idle":
@@ -293,12 +197,6 @@ public class Player extends Entity {
         if (spriteNum == 1) {
           image = up1_idle;
         }
-        if (spriteNum == 2) {
-          image = up2_idle;
-        }
-        if (spriteNum == 3) {
-          image = up3_idle;
-        }
         break;
       case "down_idle":
         if (spriteNum == 0) {
@@ -306,12 +204,6 @@ public class Player extends Entity {
         }
         if (spriteNum == 1) {
           image = down1_idle;
-        }
-        if (spriteNum == 2) {
-          image = down2_idle;
-        }
-        if (spriteNum == 3) {
-          image = down3_idle;
         }
         break;
       case "left_idle":
@@ -321,12 +213,6 @@ public class Player extends Entity {
         if (spriteNum == 1) {
           image = left1_idle;
         }
-        if (spriteNum == 2) {
-          image = left2_idle;
-        }
-        if (spriteNum == 3) {
-          image = left3_idle;
-        }
         break;
       case "right_idle":
         if(spriteNum == 0) {
@@ -334,12 +220,6 @@ public class Player extends Entity {
         }
         if(spriteNum == 1) {
           image = right1_idle;
-        }
-        if(spriteNum == 2) {
-          image = right2_idle;
-        }
-        if(spriteNum == 3) {
-          image = right3_idle;
         }
         break;
       }
