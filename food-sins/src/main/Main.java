@@ -1,16 +1,15 @@
 package main;
 
 import main.GamePanel;
-
 import javax.swing.JFrame;
 
 public class Main {
     public static void main(String[] args) {
 
-        JFrame window = new JFrame();
+        JFrame window = new JFrame(); // creates a frame
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // lets the user close the window when you hit x
         window.setResizable(true); // allows user to resize window
-        window.setTitle("Food Sins");
+        window.setTitle("Food Sins"); /// sets title
 
         GamePanel gamePanel = new GamePanel();
         window.add(gamePanel);
