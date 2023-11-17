@@ -7,9 +7,16 @@ import java.awt.*;
 import javax.swing.JFrame;
 // java awt, api for developing gui
 
+/*
+GamePanel is the "game screen" so to speak. It contains...
+- Screen settings
+- FPS
+- Game clock/loop
+    - Paint and update
+ */
+
 public class GamePanel extends JPanel implements Runnable{
-    // game panel works kind of like a game screen
-    // SCREEN SETTINGS
+    // ----------------------- TILE SETTINGS -----------------------
     // 32x32 tiles
     final int originalTileSize = 32;
     // scale factor
@@ -23,29 +30,26 @@ public class GamePanel extends JPanel implements Runnable{
     final int screenWidth = tileSize * maxScreenCol; // 1920 pixels
     final int screenHeight = tileSize * maxScreenRow; // 1088 pixels.
 
+    // ----------------------- FPS -----------------------
+    int FPS = 32;
+
+    // ----------------------- CONSTRUCTORS -----------------------
     // instantiating the key handler
     KeyHandler keyH = new KeyHandler();
     // creating the game clock
     Thread gameThread;
-
-    // FPS
-    int FPS = 32;
     // Allows for usage of key handler and game panel fom player.jav
-
     Player player = new Player(this,keyH);
 
-    // setting the player's default position, where does the player spawn?
-    int playerX = 100;
-    int playerY = 100;
-    int playerSpeed = 4;
-    //Game State
+    // ----------------------- GAME STATE -----------------------
     public  int gameState;
     public final int playState = 1;
     public final int pauseState = 2;
 
 
-    // screen setup
-    public GamePanel() {
+    // ----------------------- SCREEN SETUP -----------------------
+    public GamePanel()
+    {
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
         this.setBackground(Color.BLACK );
         this.setDoubleBuffered(true); // improves rendering performance as drawing will be done in an offscreen painting buffer
@@ -54,16 +58,18 @@ public class GamePanel extends JPanel implements Runnable{
     }
 
 
-    // game thread
-    public void startGameThread() {
+    // ----------------------- GAME THREAD -----------------------
+    public void startGameThread()
+    {
         gameThread = new Thread (this); // passing game panel to thread constructor, initiating the thread
         gameThread.start(); // will call the run method
     }
 
+    // ----------------------- RUN METHOD -----------------------
     // when we start a game thread, this run method is called
-    @Override
-    public void run() {
-
+    @Override // <--- just to say that we override the run() method from Runnable. we're using our own implementation.
+    public void run()
+    {
         // sleep method
         double drawInterval = (double) 1000000000 / FPS;
         double delta = 0;
@@ -93,16 +99,17 @@ public class GamePanel extends JPanel implements Runnable{
                 timer = 0;
             }
         }
-
-
     }
 
-    public void update() // to update information
+    // ----------------------- UPDATE -----------------------
+    public void update()
     { 
         player.update();
     }
 
-    public void paintComponent(Graphics g)  {
+    // ----------------------- PAINT -----------------------
+    public void paintComponent(Graphics g)
+    {
     /* paintComponent is a standard method to draw things on jpanel, Graphics is a class that
     has many functions to draw objects on the screen */
 
@@ -111,7 +118,6 @@ public class GamePanel extends JPanel implements Runnable{
         Graphics2D g2 = (Graphics2D)g;
         player.draw(g2);
         g2.dispose(); // disposes of graphic context &   releases systems resources to save memory
-
     }
 
 }
