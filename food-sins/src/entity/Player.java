@@ -33,7 +33,8 @@ public class Player extends Entity {
     direction = "down";
   }
 
-  private BufferedImage loadImage(String path) throws IOException {
+  private BufferedImage loadImage(String path) throws IOException
+  {
     InputStream stream = Objects.requireNonNull(getClass().getResourceAsStream(path));
     /*
     objects.requirenonnull(), checks if something is null and throws an exception instead

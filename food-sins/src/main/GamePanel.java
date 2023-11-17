@@ -1,6 +1,8 @@
 package main;
 
 import entity.Player;
+import tile.TileManager;
+
 import javax.swing.JPanel;
 import javax.swing.*;
 import java.awt.*;
@@ -34,6 +36,7 @@ public class GamePanel extends JPanel implements Runnable{
     int FPS = 32;
 
     // ----------------------- CONSTRUCTORS -----------------------
+    TileManager tileM = new TileManager(this);
     // instantiating the key handler
     KeyHandler keyH = new KeyHandler();
     // creating the game clock
@@ -116,8 +119,11 @@ public class GamePanel extends JPanel implements Runnable{
         super.paintComponent(g);
 
         Graphics2D g2 = (Graphics2D)g;
+
+        tileM.draw(g2);
         player.draw(g2);
-        g2.dispose(); // disposes of graphic context &   releases systems resources to save memory
+
+        g2.dispose(); // disposes of graphic context & releases systems resources to save memory
     }
 
 }
