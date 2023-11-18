@@ -13,6 +13,7 @@ public class TileManager {
 
     GamePanel gp;
     Tile[] tile;
+    int[][] mapTileNum;
 
     // tile manager constructor
     public TileManager(GamePanel gp)
@@ -20,6 +21,7 @@ public class TileManager {
         this.gp = gp;
 
         tile = new Tile[5]; // creating n number of tiles
+        mapTileNum = new int[gp.maxScreenCol][gp.maxScreenRow];
 
         getTileImage();
     }
