@@ -76,7 +76,7 @@ public class TileManager {
         /*
         This while loop while keep drawing a tile as long as we haven't met the max screen column and row.
         It will add column by one, then move the x coordinate by the tile size. if we have met the max column number,
-        we will reset and move on to the next column, starting a new row by way of moving a y value.
+        we will reset and move on to the next column, starting a new row by way of moving a y value
          */
         while (col < gp.maxScreenCol && row < gp.maxScreenRow)
         {
