@@ -17,7 +17,7 @@ public class Main {
 
         // ----------------------- WINDOW SETTINGS -----------------------
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // lets the user close the window when you hit x
-        window.setResizable(true); // allows user to resize window
+        window.setResizable(false); // forbids user from resizing window
         window.setTitle("Food Sins"); /// sets title
         window.setIconImage(frameIcon.getImage()); // setting the icon of the frame
 
@@ -25,7 +25,6 @@ public class Main {
         window.pack(); // causes window to be sized to fit the preferred size and layouts of its subcomponents (game panel)
         window.setLocationRelativeTo(null); // displays window at the center of the screen
         window.setVisible(true); // can see the window
-
 
         gamePanel.startGameThread();
     }

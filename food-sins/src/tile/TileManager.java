@@ -68,7 +68,29 @@ public class TileManager {
 
     public void draw(Graphics2D g2)
     {
-        g2.drawImage(tile[0].image, 0, 0, gp.tileSize, gp.tileSize, null);
+        int col = 0; // column
+        int row = 0; // row
+        int x = 0; // x coordinate
+        int y = 0; // y coordinate
+
+        /*
+        This while loop while keep drawing a tile as long as we haven't met the max screen column and row.
+        It will add column by one, then move the x coordinate by the tile size. if we have met the max column number,
+        we will reset and move on to the next column, starting a new row by way of moving a y value.
+         */
+        while (col < gp.maxScreenCol && row < gp.maxScreenRow)
+        {
+            g2.drawImage(tile[0].image, x, y, gp.tileSize, gp.tileSize, null);
+            col++;
+            x += gp.tileSize;
+
+            if (col == gp.maxScreenCol) {
+                col = 0;
+                x = 0;
+                row++;
+                y += gp.tileSize;
+            }
+        }
     }
 
 }
