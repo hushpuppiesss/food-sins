@@ -9,12 +9,11 @@ our hero - goose - is faced with the responsbility of saving the family business
 
 ## game mechanics
 so... we've taken inspiration from these types of games:
-- tower defense
 - bullet hell survival
 - turn based, anime-esque jrpg
 
-## tower defense and bullet survival
-the main dish, (say, in terms of italy, the pizza) acts as the defending tower in the first game stage. goose needs to defend both the pizza and himself from hostile toppings and complete orders to satisfy his customers.
+## bullet survival
+. goose needs to defend both the pizza and himself from hostile toppings and complete orders to satisfy his customers.
 
 game progression
 - depends on the "order" of the customer
