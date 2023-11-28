@@ -10,7 +10,7 @@ our hero - goose - is faced with the responsbility of saving the family business
 ## game mechanics
 so... we've taken inspiration from these types of games:
 - bullet hell survival
-- turn based, anime-esque jrpg
+
 
 ## bullet survival
 . goose needs to defend both the pizza and himself from hostile toppings and complete orders to satisfy his customers.
@@ -29,17 +29,4 @@ enemies
 
 items
 - power ups; random items that'll give you buffs
-- coins!
 
-### currency
-- enemies drop coin
-- coins are rewarded based on performance at the end of a restaurant takeover
-- coins can be used to purchase
-- equipment upgrades
-- cute clothing
-  
-## turn-based boss battle
- - once the 30 minute mark hits a theme starts playing and the boss comes from the of the sceeen to the bottom
- - the  a pokemon esque transition plays
- - in the boss fight your strongest towers will be summoned in your aid only maximum of 4 in total including the player
- - if you fail the fight the boss will eat your finished pizza 
