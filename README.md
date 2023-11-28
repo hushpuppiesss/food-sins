@@ -1,6 +1,6 @@
 # food sins
 
- a final project for a computer science course that attempts to combine elements from JRPGs, tower defense games, and bullet hell survival in the context of a cute goose trying to save his family's business - restaurants. 
+ a final project for a computer science course that attempts to combine elements from JRPGs, and bullet hell survival in the context of a cute goose trying to save his family's business - restaurants. 
 
 ## story
 world renowned restaurant chain goose house is in peril when their rival restaurant, foie gras pour la vie,
