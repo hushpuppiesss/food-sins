@@ -1,3 +1,12 @@
+// ==========================================
+//               GamePanel Class
+//  Author: Rachel Quedding
+//  Purpose: "The game screen" so to speak. It
+//  contains the screen settings, game clock/loop,
+//  the thread for the game, and the function for
+//  updating the info and repainting it.
+// ==========================================
+
 package main;
 
 import entity.Player;
@@ -8,14 +17,6 @@ import javax.swing.*;
 import java.awt.*;
 import javax.swing.JFrame;
 // java awt, api for developing gui
-
-/*
-GamePanel is the "game screen" so to speak. It contains...
-- Screen settings
-- FPS
-- Game clock/loop
-    - Paint and update
- */
 
 public class GamePanel extends JPanel implements Runnable{
     // ----------------------- TILE SETTINGS -----------------------
@@ -49,10 +50,10 @@ public class GamePanel extends JPanel implements Runnable{
     public final int playState = 1;
     public final int pauseState = 2;
 
-
-    // ----------------------- SCREEN SETUP -----------------------
+    // ----------------------- SCREEN SETUP, CONSTRUCTOR -----------------------
     public GamePanel()
     {
+        // initializing
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
         this.setBackground(Color.BLACK );
         this.setDoubleBuffered(true); // improves rendering performance as drawing will be done in an offscreen painting buffer
@@ -61,11 +62,12 @@ public class GamePanel extends JPanel implements Runnable{
     }
 
 
-    // ----------------------- GAME THREAD -----------------------
+    // ----------------------- GAME THREAD METHOD -----------------------
     public void startGameThread()
     {
         gameThread = new Thread (this); // passing game panel to thread constructor, initiating the thread
-        gameThread.start(); // will call the run method
+        gameThread.start(); // start() will call the run method in Runnable, but
+                            // we overrode run() below
     }
 
     // ----------------------- RUN METHOD -----------------------

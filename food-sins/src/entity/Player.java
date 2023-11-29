@@ -1,3 +1,10 @@
+
+// ==========================================
+//               Player Class
+//  Author: Marty McGill
+//  Purpose:
+// ==========================================
+
 package entity;
 
 import main.GamePanel;
@@ -33,6 +40,14 @@ public class Player extends Entity {
     direction = "down";
   }
 
+  // ==========================================
+  //             loadImage(path) method
+  //  Author: Rachel Quedding
+  //  Purpose: The object, stream, is a way of
+  //  loading images. It's stored into
+  //  a singular method, so we call this method each
+  //  time we want to load an image.
+  // ==========================================
   private BufferedImage loadImage(String path) throws IOException
   {
     InputStream stream = Objects.requireNonNull(getClass().getResourceAsStream(path));

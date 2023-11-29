@@ -10,7 +10,6 @@ import java.io.InputStream;
 import java.util.Objects;
 
 public class TileManager {
-
     GamePanel gp;
     Tile[] tile;
     int[][] mapTileNum;
