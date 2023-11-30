@@ -5,8 +5,10 @@ import main.GamePanel;
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.Objects;
 
 public class TileManager {
@@ -19,10 +21,11 @@ public class TileManager {
     {
         this.gp = gp;
 
-        tile = new Tile[5]; // creating n number of tiles
+        tile = new Tile[10]; // creating n number of tiles
         mapTileNum = new int[gp.maxScreenCol][gp.maxScreenRow];
 
         getTileImage();
+        loadMap("/res/maps/map.txt");
     }
 
     // ----------------------- LOADING IMAGE METHOD -----------------------
@@ -43,7 +46,6 @@ public class TileManager {
     {
         try
         {
-
             tile[0] = new Tile();
             tile[0].image = loadImage("/res/tiles/wood floor.png");
 
@@ -64,6 +66,49 @@ public class TileManager {
             e.printStackTrace();
         }
     }
+    // ----------------------- LOADING THE MAP -----------------------
+    public void loadMap(String filePath)
+    {
+         try
+         {
+             // importing the map from the text file
+             InputStream is = getClass().getResourceAsStream(filePath);
+             assert is != null;
+             // reading the contents of the text file
+             BufferedReader br = new BufferedReader(new InputStreamReader(is));
+
+             // initializing column and row variables
+             int col = 0;
+             int row = 0;
+
+             while (col < gp.maxScreenCol && row < gp.maxScreenRow)
+             {
+                 String line = br.readLine();
+
+                 while (col < gp.maxScreenRow)
+                 {
+                     String[] numbers = line.split(" ");
+
+                     int num = Integer.parseInt(numbers[col]);
+
+                     mapTileNum[col][row] = num;
+                     col++;
+                 }
+
+                 if (col == gp.maxScreenCol)
+                 {
+                     col = 0;
+                     row++;
+                 }
+             }
+
+             // closing the reader
+             br.close();
+         } catch (IOException e)
+         {
+
+         }
+    }
 
     // ----------------------- DRAWING METHOD -----------------------
 
@@ -81,7 +126,9 @@ public class TileManager {
          */
         while (col < gp.maxScreenCol && row < gp.maxScreenRow)
         {
-            g2.drawImage(tile[0].image, x, y, gp.tileSize, gp.tileSize, null);
+            int tileNum = mapTileNum[col][row];
+
+            g2.drawImage(tile[tileNum].image, x, y, gp.tileSize, gp.tileSize, null);
             col++;
             x += gp.tileSize;
 
