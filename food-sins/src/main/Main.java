@@ -1,7 +1,7 @@
 // ==========================================
 //               Main Class
 //  Author: Rachel Quedding
-//  Purpose: Solely contains the main method.
+//  Purpose: Solely contains the main method...
 // ==========================================
 
 package main;
