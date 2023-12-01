@@ -100,7 +100,27 @@ public class Player extends Entity {
     if (keyH.upPressed || keyH.downPressed || keyH.leftPressed || keyH.rightPressed)
     {
       // MOVING ANIMATION
-      if (keyH.upPressed) { // shorthand for keyH.upPressed being true
+
+      // DIAGONAL MOVEMENT
+      if (keyH.downPressed && keyH.leftPressed) {
+        direction = "left";
+        y += speed;
+        x -= speed;
+      } else if (keyH.downPressed && keyH.rightPressed) {
+        direction = "right";
+        y += speed;
+        x += speed;
+      } else if (keyH.upPressed && keyH.leftPressed) {
+        direction = "left";
+        y -= speed;
+        x -= speed;
+      } else if (keyH.upPressed && keyH.rightPressed) {
+        direction = "right";
+        y -= speed;
+        x += speed;
+      }
+      // HORIZONTAL AND VERTICAL MOVEMENT
+      else if (keyH.upPressed) {
         direction = "up";
         y -= speed;
       } else if (keyH.leftPressed) {
