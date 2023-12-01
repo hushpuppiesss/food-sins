@@ -32,11 +32,11 @@ public class TileManager {
     private BufferedImage loadImage(String path) throws IOException
     {
         InputStream stream = Objects.requireNonNull(getClass().getResourceAsStream(path));
-    /*
-    objects.requirenonnull(), checks if something is null and throws an exception instead
-    getclass() gets the player class
-    getresource as stream(path) obtains smth at the specified path
-     */
+        /*
+        objects.requirenonnull(), checks if something is null and throws an exception instead
+        getclass() gets the player class
+        getresource as stream(path) obtains smth at the specified path
+         */
         return ImageIO.read(stream);
         // imageio.read() reads the image
     }
@@ -73,7 +73,7 @@ public class TileManager {
          {
              // importing the map from the text file
              InputStream is = getClass().getResourceAsStream(filePath);
-             assert is != null;
+
              // reading the contents of the text file
              BufferedReader br = new BufferedReader(new InputStreamReader(is));
 
@@ -85,7 +85,7 @@ public class TileManager {
              {
                  String line = br.readLine();
 
-                 while (col < gp.maxScreenRow)
+                 while (col < gp.maxScreenCol)
                  {
                      String[] numbers = line.split(" ");
 
@@ -106,7 +106,7 @@ public class TileManager {
              br.close();
          } catch (IOException e)
          {
-
+             e.printStackTrace();
          }
     }
 
