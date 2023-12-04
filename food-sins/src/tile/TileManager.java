@@ -21,7 +21,7 @@ public class TileManager {
     {
         this.gp = gp;
 
-        tile = new Tile[10]; // creating n number of tiles
+        tile = new Tile[15]; // creating n number of tiles
         mapTileNum = new int[gp.maxScreenCol][gp.maxScreenRow];
 
         getTileImage();
@@ -47,19 +47,37 @@ public class TileManager {
         try
         {
             tile[0] = new Tile();
-            tile[0].image = loadImage("/res/tiles/wood floor.png");
+            tile[0].image = loadImage("/res/tiles/carpet.png");
 
             tile[1] = new Tile();
-            tile[1].image = loadImage("/res/tiles/carpet.png");
+            tile[1].image = loadImage("/res/tiles/cheese bowl.png");
 
             tile[2] = new Tile();
-            tile[2].image = loadImage("/res/tiles/crate empty.png");
+            tile[2].image = loadImage("/res/tiles/crate apples.png");
 
             tile[3] = new Tile();
-            tile[3].image = loadImage("/res/tiles/crate apples.png");
+            tile[3].image = loadImage("/res/tiles/crate blueberries.png");
 
             tile[4] = new Tile();
-            tile[4].image = loadImage("/res/tiles/crate oranges.png");
+            tile[4].image = loadImage("/res/tiles/crate empty.png");
+
+            tile[5] = new Tile();
+            tile[5].image = loadImage("/res/tiles/crate herb.png");
+
+            tile[6] = new Tile();
+            tile[6].image = loadImage("/res/tiles/crate oranges.png");
+
+            tile[7] = new Tile();
+            tile[7].image = loadImage("/res/tiles/flour bag.png");
+
+            tile[8] = new Tile();
+            tile[8].image = loadImage("/res/tiles/flour spill.png");
+
+            tile[9] = new Tile();
+            tile[9].image = loadImage("/res/tiles/tomato sauce.png");
+
+            tile[10] = new Tile();
+            tile[10].image = loadImage("/res/tiles/wood floor.png");
 
         } catch (IOException e)
         {
