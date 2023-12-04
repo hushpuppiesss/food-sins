@@ -2,17 +2,18 @@
 package object;
 
 import java.io.IOException;
+import java.util.Objects;
 
 import javax.imageio.ImageIO;
 
-import object.pkg.SuperObject;
+import object.SuperObject;
 
 public class Boba extends SuperObject{
     //constructor
     public Boba(){
-        name = "speedy boba"
+        name = "Speedy Boba";
         try {
-            image = ImageIO.read(getClass().getResourceAsStream("/buffs/boba.png"));
+            image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/buffs/boba.png")));
         } catch (IOException e) {
             e.printStackTrace();
             // TODO: handle exception
