@@ -16,7 +16,10 @@ import java.awt.image.BufferedImage;
 public class Entity {
 
   // X and Y of the entity's position
-  public int x, y;
+  // the player will always be at the center of the screen, so this is the coordinates of the player
+  // in the world
+  public int worldX, worldY;
+
   // speed of the entity
   public int speed;
 
