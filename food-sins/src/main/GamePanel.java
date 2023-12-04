@@ -5,6 +5,7 @@
 //  contains the screen settings, game clock/loop,
 //  the thread for the game, and the function for
 //  updating the info and repainting it.
+//Jennie - need to add [PowerUps pUps = new PowerUps(this);] somewhere, not sure yet
 // ==========================================
 
 package main;
