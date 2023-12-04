@@ -22,7 +22,7 @@ public class TileManager {
         this.gp = gp;
 
         tile = new Tile[15]; // creating n number of tiles
-        mapTileNum = new int[gp.maxScreenCol][gp.maxScreenRow];
+        mapTileNum = new int[gp.maxWorldCol][gp.maxWorldRow];
 
         getTileImage();
         loadMap("/res/maps/map2.txt");
@@ -99,11 +99,11 @@ public class TileManager {
              int col = 0;
              int row = 0;
 
-             while (col < gp.maxScreenCol && row < gp.maxScreenRow)
+             while (col < gp.maxWorldCol && row < gp.maxWorldRow)
              {
                  String line = br.readLine();
 
-                 while (col < gp.maxScreenCol)
+                 while (col < gp.maxWorldCol)
                  {
                      String[] numbers = line.split(" ");
 
@@ -113,7 +113,7 @@ public class TileManager {
                      col++;
                  }
 
-                 if (col == gp.maxScreenCol)
+                 if (col == gp.maxWorldCol)
                  {
                      col = 0;
                      row++;
@@ -132,29 +132,45 @@ public class TileManager {
 
     public void draw(Graphics2D g2)
     {
-        int col = 0; // column
-        int row = 0; // row
-        int x = 0; // x coordinate
-        int y = 0; // y coordinate
+        int worldCol = 0; // column
+        int worldRow = 0; // row
 
         /*
-        This while loop while keep drawing a tile as long as we haven't met the max screen column and row.
+        This while loop while keep drawing a tile as long as we haven't met the max world column and row.
         It will add column by one, then move the x coordinate by the tile size. if we have met the max column number,
         we will reset and move on to the next column, starting a new row by way of moving a y value
          */
-        while (col < gp.maxScreenCol && row < gp.maxScreenRow)
+        while (worldCol < gp.maxWorldCol && worldRow < gp.maxWorldRow)
         {
-            int tileNum = mapTileNum[col][row];
+            int tileNum = mapTileNum[worldCol][worldRow];
 
-            g2.drawImage(tile[tileNum].image, x, y, gp.tileSize, gp.tileSize, null);
-            col++;
-            x += gp.tileSize;
+            /* check the tile's worldX/Y to know where to draw it ON THE WORLD
+            by calculating what row/column we're on and multiplying it by the tilesize.
+            ex. worldCol = 0 and worldRow = 0 multiplied by tileSize will draw the first tile at (0,0).
+            worldCol = 1 and worldRow = 0 multiplied by tileSize will draw the next tile at (64, 0).
+             */
+            int worldX = worldCol * gp.tileSize;
+            int worldY = worldRow * gp.tileSize;
 
-            if (col == gp.maxScreenCol) {
-                col = 0;
-                x = 0;
-                row++;
-                y += gp.tileSize;
+            // WHERE ON THE SCREEN we need to draw it by calculating the distance
+            // relative to the player
+            int screenX = worldX - gp.player.worldX + gp.player.screenX;
+            int screenY = worldY - gp.player.worldY + gp.player.screenY;
+
+            // improving rendering efficiency to only draw tiles that are within our game window (with margin area_
+            if (worldX + gp.tileSize > gp.player.worldX - gp.player.screenX &&
+                worldX - gp.tileSize < gp.player.worldX + gp.player.screenX &&
+                worldY + gp.tileSize > gp.player.worldY - gp.player.screenY &&
+                worldY - gp.tileSize < gp.player.worldY + gp.player.screenY)
+            {
+                g2.drawImage(tile[tileNum].image, screenX, screenY, gp.tileSize, gp.tileSize, null);
+            }
+
+            worldCol++;
+
+            if (worldCol == gp.maxWorldCol) {
+                worldCol = 0;
+                worldRow++;
             }
         }
     }

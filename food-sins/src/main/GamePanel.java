@@ -33,6 +33,12 @@ public class GamePanel extends JPanel implements Runnable{
     public final int screenWidth = tileSize * maxScreenCol;
     public final int screenHeight = tileSize * maxScreenRow;
 
+    // ----------------------- WORLD MAP SETTINGS -----------------------
+    public final int maxWorldCol = 50;
+    public final int maxWorldRow = 50;
+    public final int worldWidth = tileSize * maxWorldCol;
+    public final int worldHeight = tileSize * maxWorldRow;
+
     // ----------------------- FPS -----------------------
     int FPS = 32;
 
@@ -43,7 +49,7 @@ public class GamePanel extends JPanel implements Runnable{
     // creating the game clock
     Thread gameThread;
     // Allows for usage of key handler and game panel fom player.jav
-    Player player = new Player(this,keyH);
+    public Player player = new Player(this,keyH);
 
     // ----------------------- GAME STATE -----------------------
     public  int gameState;
