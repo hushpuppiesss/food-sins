@@ -1,16 +1,42 @@
 //Create Object class
 //Jennie
-package object.pkg;
+package object;
+
+import java.awt.image.BufferedImage;
+import java.awt.Graphics2D;
+
+import main.GamePanel;
 
 public class SuperObject {
     public BufferedImage image;
     public String name;
     public boolean collision = false;
-    public int worldX, worldY
+    public int worldX, worldY;
     
     public void draw(Graphics2D g2, GamePanel gp) {
+        // WHERE ON THE SCREEN we need to draw it by calculating the distance
+            // relative to the player
+            int screenX = worldX - gp.player.worldX + gp.player.screenX;
+            int screenY = worldY - gp.player.worldY + gp.player.screenY;
+
+            // improving rendering efficiency to only draw tiles that are within our game window (with margin area_
+            if (worldX + gp.tileSize > gp.player.worldX - gp.player.screenX &&
+                worldX - gp.tileSize < gp.player.worldX + gp.player.screenX &&
+                worldY + gp.tileSize > gp.player.worldY - gp.player.screenY &&
+                worldY - gp.tileSize < gp.player.worldY + gp.player.screenY)
+            {
+                g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null);
+            }
         
 
     }
+    /*add in tile manager
+    OBJECT
+    for(int i = 0; i <obj.length;i++){
+        if(obj[i] != null){
+            obj[i].draw(g2,this);
+        }
+    }
+    */
 
 }

@@ -32,6 +32,8 @@ public class Main {
         window.setVisible(true); // can see the window
 
         // calling start game thread method to start the game
+       gamePanel.setupGame();
         gamePanel.startGameThread();
+        
     }
 }
