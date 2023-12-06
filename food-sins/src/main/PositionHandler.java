@@ -24,6 +24,8 @@ public class PositionHandler {
         gp.obj[1].worldY = 10*gp.tileSize;
     }
 }
+
+
     /*Call setObject in game pannel
     public void setupGame(){
         PosH.PositionHandler()；
