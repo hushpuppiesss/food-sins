@@ -45,8 +45,8 @@ public class Player extends Entity {
   public void setDefaultValues() 
   {
     // spawning player in the middleish of the map
-    worldX = gp.tileSize * 20;
-    worldY = gp.tileSize * 20;
+    worldX = gp.tileSize * 25;
+    worldY = gp.tileSize * 25;
     speed = 5;
     direction = "down";
   }

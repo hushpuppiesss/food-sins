@@ -52,9 +52,11 @@ public class GamePanel extends JPanel implements Runnable{
     Thread gameThread;
     // Allows for usage of key handler and game panel fom player.jav
     public Player player = new Player(this,keyH);
+
     //declaring the super object class, there can be a maximum of 10 objects appearings at once
     //Jennie
-    public SuperObject obj[] = new SuperObject[10];
+    public SuperObject[] obj = new SuperObject[10];
+
     // declaring the position handler
     public PositionHandler PosH = new PositionHandler(this);
 
