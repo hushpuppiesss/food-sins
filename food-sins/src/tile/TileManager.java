@@ -1,3 +1,9 @@
+// ==========================================
+//               TileManager Class
+//  Author: Rachel Quedding
+//  Purpose: handles the loading  and drawing of tiles...
+// ==========================================
+
 package tile;
 
 import main.GamePanel;
@@ -21,11 +27,11 @@ public class TileManager {
     {
         this.gp = gp;
 
-        tile = new Tile[15]; // creating n number of tiles
+        tile = new Tile[40]; // creating n number of tiles
         mapTileNum = new int[gp.maxWorldCol][gp.maxWorldRow];
 
         getTileImage();
-        loadMap("/res/maps/map2.txt");
+        loadMap("/res/maps/map.txt");
     }
 
     // ----------------------- LOADING IMAGE METHOD -----------------------
@@ -44,40 +50,62 @@ public class TileManager {
     // ----------------------- GETTING TILE IMAGES -----------------------
     public void getTileImage()
     {
-        try
-        {
-            tile[0] = new Tile();
-            tile[0].image = loadImage("/res/tiles/carpet.png");
+        try {
+            // loads the 9 green carpet sprites
+            for (int i = 1; i < 10; i++)
+            {
+                tile[i - 1] = new Tile();
+                tile[i - 1].image = loadImage("/res/tiles/carpet_green" + i + ".png");
+            }
 
-            tile[1] = new Tile();
-            tile[1].image = loadImage("/res/tiles/cheese bowl.png");
+            // loads the 9 red carpet sprites
+            for (int i = 1; i < 10; i++)
+            {
+                tile[i + 8] = new Tile();
+                tile[i + 8].image = loadImage("/res/tiles/carpet_red" + i + ".png");
+            }
 
-            tile[2] = new Tile();
-            tile[2].image = loadImage("/res/tiles/crate apples.png");
+            // loads the 9 yellow carpet sprites
+            for (int i = 1; i < 10; i++)
+            {
+                tile[i + 17] = new Tile();
+                tile[i + 17].image = loadImage("/res/tiles/carpet_yellow" + i + ".png");
+            }
 
-            tile[3] = new Tile();
-            tile[3].image = loadImage("/res/tiles/crate blueberries.png");
+            tile[27] = new Tile();
+            tile[27].image = loadImage("/res/tiles/cheese bowl.png");
 
-            tile[4] = new Tile();
-            tile[4].image = loadImage("/res/tiles/crate empty.png");
+            tile[28] = new Tile();
+            tile[28].image = loadImage("/res/tiles/crate apples.png");
 
-            tile[5] = new Tile();
-            tile[5].image = loadImage("/res/tiles/crate herb.png");
+            tile[29] = new Tile();
+            tile[29].image = loadImage("/res/tiles/crate blueberries.png");
 
-            tile[6] = new Tile();
-            tile[6].image = loadImage("/res/tiles/crate oranges.png");
+            tile[30] = new Tile();
+            tile[30].image = loadImage("/res/tiles/crate empty.png");
 
-            tile[7] = new Tile();
-            tile[7].image = loadImage("/res/tiles/flour bag.png");
+            tile[31] = new Tile();
+            tile[31].image = loadImage("/res/tiles/crate herb.png");
 
-            tile[8] = new Tile();
-            tile[8].image = loadImage("/res/tiles/flour spill.png");
+            tile[32] = new Tile();
+            tile[32].image = loadImage("/res/tiles/crate oranges.png");
 
-            tile[9] = new Tile();
-            tile[9].image = loadImage("/res/tiles/tomato sauce.png");
+            tile[33] = new Tile();
+            tile[33].image = loadImage("/res/tiles/empty bowl.png");
 
-            tile[10] = new Tile();
-            tile[10].image = loadImage("/res/tiles/wood floor.png");
+            tile[34] = new Tile();
+            tile[34].image = loadImage("/res/tiles/flour bag.png");
+
+            tile[35] = new Tile();
+            tile[35].image = loadImage("/res/tiles/flour spill.png");
+
+            tile[36] = new Tile();
+            tile[36].image = loadImage("/res/tiles/tomato sauce.png");
+
+            tile[37] = new Tile();
+            tile[37].image = loadImage("/res/tiles/wood floor.png");
+
+
 
         } catch (IOException e)
         {

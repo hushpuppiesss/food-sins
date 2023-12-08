@@ -11,6 +11,7 @@
 package main;
 
 import entity.Player;
+import object.SuperObject;
 import tile.TileManager;
 
 import javax.swing.JPanel;
@@ -52,6 +53,13 @@ public class GamePanel extends JPanel implements Runnable{
     // Allows for usage of key handler and game panel fom player.jav
     public Player player = new Player(this,keyH);
 
+    //declaring the super object class, there can be a maximum of 10 objects appearings at once
+    //Jennie
+    public SuperObject[] obj = new SuperObject[10];
+
+    // declaring the position handler
+    public PositionHandler PosH = new PositionHandler(this);
+
     // ----------------------- GAME STATE -----------------------
     public  int gameState;
     public final int playState = 1;
@@ -66,6 +74,10 @@ public class GamePanel extends JPanel implements Runnable{
         this.setDoubleBuffered(true); // improves rendering performance as drawing will be done in an offscreen painting buffer
         this.addKeyListener(keyH); // so that game panel can recognize key input
         this.setFocusable(true); // "focused" to receive input
+    }
+    //set object method
+    public void setupGame(){
+        PosH.setObject();
     }
 
 
@@ -128,11 +140,18 @@ public class GamePanel extends JPanel implements Runnable{
         super.paintComponent(g);
 
         Graphics2D g2 = (Graphics2D)g;
-
+        //Tile
         tileM.draw(g2);
+        //player
         player.draw(g2);
+        //buff
+        for(int i=0;i<obj.length; i++){
+            if(obj[i] != null){
+                obj[i].draw(g2,this);
+            }
+        }
 
         g2.dispose(); // disposes of graphic context & releases systems resources to save memory
     }
-
+   
 }

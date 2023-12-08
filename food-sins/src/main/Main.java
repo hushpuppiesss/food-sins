@@ -6,6 +6,8 @@
 
 package main;
 
+// rachel branch
+
 import main.GamePanel;
 import javax.swing.*;
 import java.util.Objects;
@@ -32,6 +34,9 @@ public class Main {
         window.setVisible(true); // can see the window
 
         // calling start game thread method to start the game
+        
         gamePanel.startGameThread();
+        gamePanel.setupGame();
+        
     }
 }

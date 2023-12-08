@@ -6,8 +6,6 @@ import java.util.Objects;
 
 import javax.imageio.ImageIO;
 
-import object.SuperObject;
-
 public class Boba extends SuperObject{
     //constructor
     public Boba(){
@@ -16,9 +14,9 @@ public class Boba extends SuperObject{
             image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/buffs/boba.png")));
         } catch (IOException e) {
             e.printStackTrace();
-            // TODO: handle exception
         }
         //add to game panel SuperObject obj[]=new SuperObject[10];//prepares a maximum 10 objects on display
+
 
     }
     

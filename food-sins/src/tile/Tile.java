@@ -1,3 +1,5 @@
+// creates tile objects
+
 package tile;
 
 import java.awt.image.BufferedImage;
