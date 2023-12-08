@@ -31,5 +31,25 @@ public class Entity {
 
   public int spriteCounter = 0;
   public int spriteNum = 0;
+  //state of the character
+  public boolean alive = true;
+
+  // Character ATTiButes
+
+  public int life;
+  public int maxLife;
+  public int attack;
+  public int water;
+  public int maxWater;
+  public String name;
+  public Projectile projectile;
+
+
+  // Item attruibutes
+  public int attackValue;
+  public int defenseValue;
+  public String description = "";
+  public int useCost;
+
 
 }
