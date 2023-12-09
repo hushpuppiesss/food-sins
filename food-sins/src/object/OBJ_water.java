@@ -1,3 +1,10 @@
+// ==========================================
+//               OBJ_water Class
+//  Author: Marty McGill
+//  Purpose: Projectile that the duck shoots
+// ==========================================
+
+
 package object;
 
 import entity.Projectile;

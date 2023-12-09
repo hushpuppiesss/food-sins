@@ -5,7 +5,7 @@
 //  contains the screen settings, game clock/loop,
 //  the thread for the game, and the function for
 //  updating the info and repainting it.
-//Jennie - need to add [PowerUps pUps = new PowerUps(this);] somewhere, not sure yet
+// Jennie - need to add [PowerUps pUps = new PowerUps(this);] somewhere, not sure yet
 // ==========================================
 
 package main;
@@ -27,7 +27,7 @@ public class GamePanel extends JPanel implements Runnable{
     // 32x32 tiles
     final int originalTileSize = 32;
     // scale factor
-    final int scale = 2;
+    public final int scale = 2;
 
     // the size that you'll see on screen - 64x tiles
     public final int tileSize = originalTileSize * scale;
@@ -46,12 +46,16 @@ public class GamePanel extends JPanel implements Runnable{
     // ----------------------- FPS -----------------------
     int FPS = 32;
 
-    // ----------------------- CONSTRUCTORS -----------------------
+    // ----------------------- CONSTRUCTORS -----------------------a
+
+    // tile manager constructor
     TileManager tileM = new TileManager(this);
     // instantiating the key handler
     KeyHandler keyH = new KeyHandler();
     // creating the game clock
     Thread gameThread;
+    // collision checker
+    public CollisionChecker cChecker = new CollisionChecker(this);
     // Allows for usage of key handler and game panel fom player.jav
     public Player player = new Player(this,keyH);
 
