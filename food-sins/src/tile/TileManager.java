@@ -74,33 +74,43 @@ public class TileManager {
 
             tile[27] = new Tile();
             tile[27].image = loadImage("/res/tiles/cheese bowl.png");
+            tile[27].collision = true;
 
             tile[28] = new Tile();
             tile[28].image = loadImage("/res/tiles/crate apples.png");
+            tile[28].collision = true;
 
             tile[29] = new Tile();
             tile[29].image = loadImage("/res/tiles/crate blueberries.png");
+            tile[29].collision = true;
 
             tile[30] = new Tile();
             tile[30].image = loadImage("/res/tiles/crate empty.png");
+            tile[30].collision = true;
 
             tile[31] = new Tile();
             tile[31].image = loadImage("/res/tiles/crate herb.png");
+            tile[31].collision = true;
 
             tile[32] = new Tile();
             tile[32].image = loadImage("/res/tiles/crate oranges.png");
+            tile[32].collision = true;
 
             tile[33] = new Tile();
             tile[33].image = loadImage("/res/tiles/empty bowl.png");
+            tile[33].collision = true;
 
             tile[34] = new Tile();
             tile[34].image = loadImage("/res/tiles/flour bag.png");
+            tile[34].collision = true;
 
             tile[35] = new Tile();
             tile[35].image = loadImage("/res/tiles/flour spill.png");
 
+
             tile[36] = new Tile();
             tile[36].image = loadImage("/res/tiles/tomato sauce.png");
+            tile[36].collision = true;
 
             tile[37] = new Tile();
             tile[37].image = loadImage("/res/tiles/wood floor.png");
