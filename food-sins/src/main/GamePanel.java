@@ -10,6 +10,7 @@
 
 package main;
 
+import entity.Entity;
 import entity.Player;
 import object.SuperObject;
 import tile.TileManager;
@@ -17,6 +18,7 @@ import tile.TileManager;
 import javax.swing.JPanel;
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 import javax.swing.JFrame;
 // java awt, api for developing gui
 
@@ -153,5 +155,15 @@ public class GamePanel extends JPanel implements Runnable{
 
         g2.dispose(); // disposes of graphic context & releases systems resources to save memory
     }
+    // entity and object
+    public ArrayList<Entity> projectileList = new ArrayList<>();
+    public ArrayList<Entity> entityList = new ArrayList<>();
+
+    // ADD ENTITIES TO THE LIST
+//    for (int i = 0; i < projectileList.size(); i++){
+//        if(projectileList.get(i) != null) {
+//            entityList.add(projectileList.get(i));
+//        }
+//    }
    
 }
