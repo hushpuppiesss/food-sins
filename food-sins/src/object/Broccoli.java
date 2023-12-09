@@ -7,12 +7,12 @@ import object.SuperObject;
 
 import javax.imageio.ImageIO;
 
-public class Boba extends SuperObject{
+public class Broccoli extends SuperObject{
     //constructor
-    public Boba(){
-        name = "Speedy Boba";
+    public Broccoli(){
+        name = "atk broco";
         try {
-            image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/buffs/boba.png")));
+            image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/buffs/broccoli.png")));
         } catch (IOException e) {
             e.printStackTrace();
         }
