@@ -36,7 +36,16 @@ public class Player extends Entity {
     // the player is actually in the middle of the screen rather than the left corner of the sprite
     // is in the middle of the screen.
     screenX = gp.screenWidth / 2 - (gp.tileSize / 2);
-    screenY = gp.screenHeight / 2 - (gp.tileSize / 2) ;
+    screenY = gp.screenHeight / 2 - (gp.tileSize / 2);
+
+    // player rectangle for collisions
+    solidArea = new Rectangle();
+    // top left coordinate of rectangle
+    solidArea.x = 10;
+    solidArea.y = 18;
+    // dimensions of rectangle
+    solidArea.width = 14 * gp.scale;
+    solidArea.height = 15 * gp.scale;
 
     setDefaultValues();
     getPlayerImage();
@@ -131,20 +140,42 @@ public class Player extends Entity {
         worldX += speed;
       }
       // HORIZONTAL AND VERTICAL MOVEMENT
-      else if (keyH.upPressed) {
+      if (keyH.upPressed) {
         direction = "up";
-        worldY -= speed;
       } else if (keyH.leftPressed) {
         direction = "left";
-        worldX -= speed;
       } else if (keyH.downPressed) {
         direction = "down";
-        worldY += speed;
       } else if (keyH.rightPressed) {
         direction = "right";
-        worldX += speed;
       }
 
+      // ----------------------- CHECKING TILE COLLISION -----------------------
+      collisionOn = false;
+      // passing this (player class) as the entity for checking whether we are colliding with a tile
+      gp.cChecker.checkTile(this);
+
+      // if collision is false, player can move
+      if (!collisionOn)
+      {
+        switch (direction)
+        {
+          case "up":
+            worldY -= speed;
+            break;
+          case "down":
+            worldY += speed;
+            break;
+          case "left":
+            worldX -= speed;
+            break;
+          case "right":
+            worldX += speed;
+            break;
+        }
+      }
+
+      // ----------------------- ANIMATING THE SPRITES -----------------------
       spriteCounter++;
 
       if (spriteCounter > 10)

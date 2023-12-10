@@ -1,8 +1,14 @@
-//jennie 
+// ==========================================
+//               Boba Class
+//  Author: Liyuan Hu
+//  Purpose:
+// ==========================================
+
 package object;
 
 import java.io.IOException;
 import java.util.Objects;
+import object.SuperObject;
 
 import javax.imageio.ImageIO;
 
