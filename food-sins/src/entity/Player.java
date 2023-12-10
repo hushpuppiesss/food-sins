@@ -43,6 +43,9 @@ public class Player extends Entity {
     // top left coordinate of rectangle
     solidArea.x = 10;
     solidArea.y = 18;
+    //record the default values 
+    SolidAreaDefaultx = solidArea.x;
+    SolidAreaDefaulty = solidArea.y;
     // dimensions of rectangle
     solidArea.width = 14 * gp.scale;
     solidArea.height = 15 * gp.scale;
@@ -154,6 +157,8 @@ public class Player extends Entity {
       collisionOn = false;
       // passing this (player class) as the entity for checking whether we are colliding with a tile
       gp.cChecker.checkTile(this);
+      //check object collision
+      int objIndex = gp.cChecker.checkObject(this, true);
 
       // if collision is false, player can move
       if (!collisionOn)

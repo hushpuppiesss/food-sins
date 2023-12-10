@@ -34,6 +34,8 @@ public class Entity {
 
   // for collisions
   public Rectangle solidArea;
+  //jennie
+  public int SolidAreaDefaultx, SolidAreaDefaulty;
   public boolean collisionOn = false;
 
   // ----------------------- STATE OF THE CHARACTER -----------------------

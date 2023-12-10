@@ -21,6 +21,7 @@ public class Boba extends SuperObject{
         } catch (IOException e) {
             e.printStackTrace();
         }
+        collision = true;
         //add to game panel SuperObject obj[]=new SuperObject[10];//prepares a maximum 10 objects on display
 
 

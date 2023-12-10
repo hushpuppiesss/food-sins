@@ -17,6 +17,10 @@ public class SuperObject {
     public String name;
     public boolean collision = false;
     public int worldX, worldY;
+    //sets how big the object is
+    public Rectangle solidArea = new Rectangle(0,0,64,64);
+    public int SolidAreaDefaultx = 0;
+    public int SolidAreaDefaulty = 0;
     
     public void draw(Graphics2D g2, GamePanel gp) {
         // WHERE ON THE SCREEN we need to draw it by calculating the distance
