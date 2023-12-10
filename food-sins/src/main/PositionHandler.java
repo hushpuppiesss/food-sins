@@ -1,4 +1,9 @@
-//jennie
+// ==========================================
+//          Position Handler Class
+//  Author: Liyuan Hu
+//  Purpose:
+// ==========================================
+
 package main;
 
 import object.Boba;
@@ -7,12 +12,12 @@ import object.Pudding;
 
 public class PositionHandler {
     GamePanel gp;
-//recieve game pannel
+// receive game panel
     public PositionHandler(GamePanel gp){
         this.gp = gp;
     }
-    //in game pannel also initiate this class
-    //public PositionHandler PosH = new PositionHandler(this)
+    // in game panel also initiate this class
+    // public PositionHandler PosH = new PositionHandler(this)
     public void setObject(){
         //pulling it from the subclass into an array
         gp.obj[0]=new Boba();

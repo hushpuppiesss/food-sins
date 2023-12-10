@@ -1,4 +1,9 @@
-//jennie 
+// ==========================================
+//               Boba Class
+//  Author: Liyuan Hu
+//  Purpose:
+// ==========================================
+
 package object;
 
 import java.io.IOException;

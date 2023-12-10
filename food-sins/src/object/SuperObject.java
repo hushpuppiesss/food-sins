@@ -1,5 +1,9 @@
-//Create Object class
-//Jennie
+// ==========================================
+//              SuperObject Class
+//  Author: Liyuan Hu
+//  Purpose: Creates objects
+// ==========================================
+
 package object;
 
 import main.GamePanel;
