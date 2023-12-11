@@ -22,9 +22,11 @@ public class Player extends Entity {
   GamePanel gp;
   KeyHandler keyH;
 
+  // positions on the screen
   public final int screenX;
   public final int screenY;
 
+  // counting the items
   int hasBoba = 0;
   int hasPud = 0;
   int hasBroco = 0;
@@ -239,21 +241,34 @@ public class Player extends Entity {
     }
 
   }
-  //picking up objects
+  // ----------------------- PICKING UP THE ITEMS -----------------------
+  // ==========================================
+  //               pickUpObject Method
+  //  Author: Liyuan Hu
+  //  Purpose: method for picking up objects and modifying the stats of player
+  // ==========================================
   public void pickUpObject(int i){
     if (i != 999){
       String objectName = gp.obj[i].name;
 
       switch (objectName){
         case "Speedy Boba":
-        speed += 1;
-        gp.obj[i]=null;
+          gp.playerSFX(2);    // sound effect
+          speed += 1;           // stat modifier
+          gp.obj[i] = null;
+          break;
+
         case "atk broco":
-        attack += 2;
-         gp.obj[i]=null;
+          gp.playerSFX(1);
+          attack += 2;
+          gp.obj[i] = null;
+          break;
+
         case "defense pudding":
-        defenseValue += 2;
-         gp.obj[i]=null;
+          gp.playerSFX(2);
+          defenseValue += 2;
+          gp.obj[i] = null;
+          break;
       }
 
     }
