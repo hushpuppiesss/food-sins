@@ -25,6 +25,10 @@ public class Player extends Entity {
   public final int screenX;
   public final int screenY;
 
+  int hasBoba = 0;
+  int hasPud = 0;
+  int hasBroco = 0;
+
   public Player(GamePanel gp, KeyHandler keyH) 
   {
     this.gp = gp;
@@ -43,6 +47,9 @@ public class Player extends Entity {
     // top left coordinate of rectangle
     solidArea.x = 10;
     solidArea.y = 18;
+    //record the default values 
+    SolidAreaDefaultx = solidArea.x;
+    SolidAreaDefaulty = solidArea.y;
     // dimensions of rectangle
     solidArea.width = 14 * gp.scale;
     solidArea.height = 15 * gp.scale;
@@ -56,7 +63,7 @@ public class Player extends Entity {
     // spawning player in the middleish of the map
     worldX = gp.tileSize * 25;
     worldY = gp.tileSize * 25;
-    speed = 5;
+    speed = 3;
     direction = "down";
   }
 
@@ -154,6 +161,9 @@ public class Player extends Entity {
       collisionOn = false;
       // passing this (player class) as the entity for checking whether we are colliding with a tile
       gp.cChecker.checkTile(this);
+      //check object collision
+      int objIndex = gp.cChecker.checkObject(this, true);
+      pickUpObject(objIndex);
 
       // if collision is false, player can move
       if (!collisionOn)
@@ -226,6 +236,26 @@ public class Player extends Entity {
 
         spriteCounter = 0;
       }
+    }
+
+  }
+  //picking up objects
+  public void pickUpObject(int i){
+    if (i != 999){
+      String objectName = gp.obj[i].name;
+
+      switch (objectName){
+        case "Speedy Boba":
+        speed += 1;
+        gp.obj[i]=null;
+        case "atk broco":
+        attack += 2;
+         gp.obj[i]=null;
+        case "defense pudding":
+        defenseValue += 2;
+         gp.obj[i]=null;
+      }
+
     }
 
   }

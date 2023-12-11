@@ -30,10 +30,13 @@ public class Entity {
   public String direction;
   public int spriteCounter = 0;
   public int spriteNum = 0;
-  //Jennie 
+  // Jennie
 
   // for collisions
   public Rectangle solidArea;
+
+  // Jennie
+  public int SolidAreaDefaultx, SolidAreaDefaulty;
   public boolean collisionOn = false;
 
   // ----------------------- STATE OF THE CHARACTER -----------------------
