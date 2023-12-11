@@ -50,6 +50,10 @@ public class GamePanel extends JPanel implements Runnable{
     TileManager tileM = new TileManager(this);
     // instantiating the key handler
     KeyHandler keyH = new KeyHandler();
+
+    public AssetSetter aSetter = new AssetSetter(this);
+    public Entity monster[] = new Entity[100];
+    //declaring the super object class, there can be a maximum of 10 objects appearings at once
     // creating the game clock
     Thread gameThread;
     // Allows for usage of key handler and game panel fom player.jav
@@ -160,10 +164,10 @@ public class GamePanel extends JPanel implements Runnable{
     public ArrayList<Entity> entityList = new ArrayList<>();
 
     // ADD ENITIES TO THE LIST
+    /*
     for(int i = 0; i < projectileList.size(); i++){
         if(projectileList.get(i) != null) {
             entityList.add(projectileList.get(i));
+
+     */
         }
-    }
-   
-}

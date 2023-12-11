@@ -9,6 +9,9 @@
 
 package entity;
 
+import main.GamePanel;
+
+import java.awt.*;
 import java.awt.image.BufferedImage;
 
 // Will store variables that will be used in player, enemy, turret, and npc classes
@@ -31,6 +34,12 @@ public class Entity {
 
   public int spriteCounter = 0;
   public int spriteNum = 0;
+
+  public Rectangle solidArea = new Rectangle(0,0,32,32);
+
+  public int solidAreaDefaultX, solidAreaDefaultY;
+
+
   //state of the character
   public boolean alive = true;
 
@@ -52,4 +61,9 @@ public class Entity {
   public int useCost;
 
 
+  public Entity(GamePanel gp) {
+  }
+  public Entity() {
+
+  }
 }
