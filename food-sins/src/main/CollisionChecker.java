@@ -100,22 +100,49 @@ public class CollisionChecker {
                     case"up":
                     entity.solidArea.y -= entity.speed;
                     if (entity.solidArea.intersects(gp.obj[i].solidArea)){
-                        System.out.println("This works"); 
+                        if(gp.obj[i].collision==true){
+                            entity.collisionOn = true;
+
+                        }
+                        if(player == true){
+                            index = i;
+                        }
                     }
                     case"down":
                     entity.solidArea.y += entity.speed;
                     if (entity.solidArea.intersects(gp.obj[i].solidArea)){
-                        System.out.println("This works"); 
+                        if(gp.obj[i].collision==true){
+                            entity.collisionOn = true;
+
+                        }
+                        if(player == true){
+                            index = i;
+                        }
+                       
                     }
                     case "left":
                     entity.solidArea.x -= entity.speed;
                     if (entity.solidArea.intersects(gp.obj[i].solidArea)){
-                        System.out.println("This works"); 
+                        if(gp.obj[i].collision==true){
+                            entity.collisionOn = true;
+
+                        }
+                        if(player == true){
+                            index = i;
+                        }
+                       
                     }
                     case "right":
                     entity.solidArea.x += entity.speed;
                     if (entity.solidArea.intersects(gp.obj[i].solidArea)){
-                      System.out.println("This works");  
+                        if(gp.obj[i].collision==true){
+                            entity.collisionOn = true;
+
+                        }
+                        if(player == true){
+                            index = i;
+                        }
+                     
                     }
                     entity.solidArea.x= entity.SolidAreaDefaultx;
                     entity.solidArea.y = entity.SolidAreaDefaulty;

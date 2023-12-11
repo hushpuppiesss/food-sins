@@ -25,6 +25,10 @@ public class Player extends Entity {
   public final int screenX;
   public final int screenY;
 
+  int hasBoba = 0;
+  int hasPud = 0;
+  int hasBroco = 0;
+
   public Player(GamePanel gp, KeyHandler keyH) 
   {
     this.gp = gp;
@@ -159,6 +163,7 @@ public class Player extends Entity {
       gp.cChecker.checkTile(this);
       //check object collision
       int objIndex = gp.cChecker.checkObject(this, true);
+      pickUpObject(objIndex);
 
       // if collision is false, player can move
       if (!collisionOn)
@@ -231,6 +236,26 @@ public class Player extends Entity {
 
         spriteCounter = 0;
       }
+    }
+
+  }
+  //picking up objects
+  public void pickUpObject(int i){
+    if (i != 999){
+      String objectName = gp.obj[i].name;
+
+      switch (objectName){
+        case "Speedy Boba":
+        speed+=5;
+        gp.obj[i]=null;
+        case "atk broco":
+        attack+=2;
+         gp.obj[i]=null;
+        case "defense pudding":
+        defenseValue+=2;
+         gp.obj[i]=null;
+      }
+
     }
 
   }
