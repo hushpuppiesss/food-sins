@@ -94,30 +94,30 @@ public class CollisionChecker {
                 entity.solidArea.y = entity.worldY+entity.solidArea.y;
                 //Get object solid area position
                 gp.obj[i].solidArea.x = gp.obj[i].worldX + gp.obj[i].solidArea.x;
-                gp.obj[i].solidArea.y = gp.obj[i].worldY+gp.obj[i].solidArea.y;
+                gp.obj[i].solidArea.y = gp.obj[i].worldY + gp.obj[i].solidArea.y;
                 //simulating entity's movement and check where it is after it is moved 
                 switch(entity.direction){
                     case"up":
-                    entity.solidArea.y -=entity.speed;
+                    entity.solidArea.y -= entity.speed;
                     if (entity.solidArea.intersects(gp.obj[i].solidArea)){
                         System.out.println("This works"); 
                     }
                     case"down":
-                    entity.solidArea.y -=entity.speed;
+                    entity.solidArea.y += entity.speed;
                     if (entity.solidArea.intersects(gp.obj[i].solidArea)){
                         System.out.println("This works"); 
                     }
                     case "left":
-                    entity.solidArea.x -=entity.speed;
+                    entity.solidArea.x -= entity.speed;
                     if (entity.solidArea.intersects(gp.obj[i].solidArea)){
                         System.out.println("This works"); 
                     }
                     case "right":
-                    entity.solidArea.x +=entity.speed;
+                    entity.solidArea.x += entity.speed;
                     if (entity.solidArea.intersects(gp.obj[i].solidArea)){
                       System.out.println("This works");  
                     }
-                    entity.solidArea.x=entity.SolidAreaDefaultx;
+                    entity.solidArea.x= entity.SolidAreaDefaultx;
                     entity.solidArea.y = entity.SolidAreaDefaulty;
                     gp.obj[i].solidArea.x = gp.obj[i].SolidAreaDefaultx;
                     gp.obj[i].solidArea.y = gp.obj[i].SolidAreaDefaulty;
