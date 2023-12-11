@@ -63,7 +63,7 @@ public class Player extends Entity {
     // spawning player in the middleish of the map
     worldX = gp.tileSize * 25;
     worldY = gp.tileSize * 25;
-    speed = 5;
+    speed = 3;
     direction = "down";
   }
 
@@ -246,13 +246,13 @@ public class Player extends Entity {
 
       switch (objectName){
         case "Speedy Boba":
-        speed+=5;
+        speed += 1;
         gp.obj[i]=null;
         case "atk broco":
-        attack+=2;
+        attack += 2;
          gp.obj[i]=null;
         case "defense pudding":
-        defenseValue+=2;
+        defenseValue += 2;
          gp.obj[i]=null;
       }
 

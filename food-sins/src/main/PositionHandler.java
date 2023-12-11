@@ -23,16 +23,16 @@ public class PositionHandler {
         gp.obj[0]=new Boba();
         //placing it in the coordinates on the map
         //maybe change to random in the future?
-        gp.obj[0].worldX = 10*gp.tileSize;
-        gp.obj[0].worldY= 20*gp.tileSize;
+        gp.obj[0].worldX = 10 * gp.tileSize;
+        gp.obj[0].worldY = 20 * gp.tileSize;
         //a pudding
         gp.obj[2]=new Pudding();
-        gp.obj[2].worldX = 20*gp.tileSize;
-        gp.obj[2].worldY = 20*gp.tileSize;
+        gp.obj[2].worldX = 20 * gp.tileSize;
+        gp.obj[2].worldY = 20 * gp.tileSize;
         // a broccoli
         gp.obj[1]=new Broccoli();
-        gp.obj[1].worldX = 5*gp.tileSize;
-        gp.obj[1].worldY = 5*gp.tileSize;
+        gp.obj[1].worldX = 5 * gp.tileSize;
+        gp.obj[1].worldY = 5 * gp.tileSize;
     }
 }
 
