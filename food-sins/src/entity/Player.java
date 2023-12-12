@@ -256,18 +256,21 @@ public class Player extends Entity {
           gp.playerSFX(2);    // sound effect
           speed += 1;           // stat modifier
           gp.obj[i] = null;
+          gp.ui.showMessage("Speed up!");
           break;
 
         case "Attack Broccoli":
           gp.playerSFX(1);
           attack += 2;
           gp.obj[i] = null;
+          gp.ui.showMessage("Attack up!");
           break;
 
         case "Defense Pudding":
           gp.playerSFX(2);
           defenseValue += 2;
           gp.obj[i] = null;
+          gp.ui.showMessage("Defense up!");
           break;
       }
 
