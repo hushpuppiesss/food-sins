@@ -3,14 +3,13 @@ package object;
 
 import java.io.IOException;
 import java.util.Objects;
-import object.SuperObject;
 
 import javax.imageio.ImageIO;
 
-public class Pudding extends SuperObject{
+public class OBJ_Pudding extends SuperObject{
     //constructor
-    public Pudding(){
-        name = "defense pudding";
+    public OBJ_Pudding(){
+        name = "Defense Pudding";
         try {
             image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/buffs/pudding1.png")));
            image2 = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/buffs/pudding2.png")));

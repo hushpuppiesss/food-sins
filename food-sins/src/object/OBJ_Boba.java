@@ -8,13 +8,12 @@ package object;
 
 import java.io.IOException;
 import java.util.Objects;
-import object.SuperObject;
 
 import javax.imageio.ImageIO;
 
-public class Boba extends SuperObject{
+public class OBJ_Boba extends SuperObject{
     //constructor
-    public Boba(){
+    public OBJ_Boba(){
         name = "Speedy Boba";
         try {
             image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/buffs/boba.png")));

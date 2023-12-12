@@ -3,14 +3,13 @@ package object;
 
 import java.io.IOException;
 import java.util.Objects;
-import object.SuperObject;
 
 import javax.imageio.ImageIO;
 
-public class Broccoli extends SuperObject{
+public class OBJ_Broccoli extends SuperObject{
     //constructor
-    public Broccoli(){
-        name = "atk broco";
+    public OBJ_Broccoli(){
+        name = "Attack Broccoli";
         try {
             image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/buffs/broccoli.png")));
         } catch (IOException e) {

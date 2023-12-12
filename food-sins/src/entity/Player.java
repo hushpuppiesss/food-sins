@@ -258,13 +258,13 @@ public class Player extends Entity {
           gp.obj[i] = null;
           break;
 
-        case "atk broco":
+        case "Attack Broccoli":
           gp.playerSFX(1);
           attack += 2;
           gp.obj[i] = null;
           break;
 
-        case "defense pudding":
+        case "Defense Pudding":
           gp.playerSFX(2);
           defenseValue += 2;
           gp.obj[i] = null;

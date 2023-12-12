@@ -51,10 +51,16 @@ public class GamePanel extends JPanel implements Runnable{
     // instantiating the key handler
     KeyHandler keyH = new KeyHandler();
     // sound class
-    Sound sound = new Sound();
+    Sound music = new Sound();
+    Sound sfx = new Sound();
 
     // collision checker
     public CollisionChecker cChecker = new CollisionChecker(this);
+
+    // declaring the position handler
+    public PositionHandler PosH = new PositionHandler(this);
+
+    public UI ui = new UI(this);
 
     // creating the game clock
     Thread gameThread;
@@ -66,8 +72,7 @@ public class GamePanel extends JPanel implements Runnable{
     // Jennie
     public SuperObject[] obj = new SuperObject[10];
 
-    // declaring the position handler
-    public PositionHandler PosH = new PositionHandler(this);
+
 
     // ----------------------- GAME STATE -----------------------
     public  int gameState;
@@ -153,16 +158,18 @@ public class GamePanel extends JPanel implements Runnable{
         super.paintComponent(g);
 
         Graphics2D g2 = (Graphics2D)g;
-        //Tile
+        // Tile
         tileM.draw(g2);
-        //player
+        // player
         player.draw(g2);
-        //buff
+        // buff
         for(int i=0;i<obj.length; i++){
             if(obj[i] != null){
                 obj[i].draw(g2,this);
             }
         }
+        // draws the ui
+        ui.draw(g2);
 
         g2.dispose(); // disposes of graphic context & releases systems resources to save memory
     }
@@ -170,21 +177,21 @@ public class GamePanel extends JPanel implements Runnable{
     // ----------------------- SOUND METHODS -----------------------
     public void playMusic (int i) {
         // calls setfile from sound class
-        sound.setFile(i);
+        music.setFile(i);
         // calls play method and to loop it for background music
-        sound.play();
-        sound.loop();
+        music.play();
+        music.loop();
     }
 
     public void stopMusic() {
         // calls stop method from sound class
-        sound.stop();
+        music.stop();
     }
 
     public void playerSFX(int i) {
         // plays player sound effects
-        sound.setFile(i);
-        sound.play();
+        sfx.setFile(i);
+        sfx.play();
     }
 
     // entity and object
