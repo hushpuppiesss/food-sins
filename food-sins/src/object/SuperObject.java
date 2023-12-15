@@ -7,12 +7,18 @@
 package object;
 
 import main.GamePanel;
-
+import object.heart;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-
+import main.UtilityTool; //Mateo
+//rachel and Jennie
 public class SuperObject {
     public BufferedImage image,image2,image3;
+
+
+    //Mateo Ultilty
+    UtilityTool uTool = new UtilityTool();
+
 
     public String name;
     public boolean collision = false;
@@ -36,9 +42,11 @@ public class SuperObject {
             {
                 g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null);
             }
-        
+
+
 
     }
+
     /*add in tile manager
     OBJECT
     for(int i = 0; i <obj.length;i++){

@@ -9,6 +9,8 @@
 
 package entity;
 
+import main.GamePanel;
+
 import java.awt.Rectangle; // will use class to create invisible rectangles to store data
 import java.awt.image.BufferedImage;
 
@@ -39,11 +41,18 @@ public class Entity {
   public int SolidAreaDefaultx, SolidAreaDefaulty;
   public boolean collisionOn = false;
 
+  public Entity(GamePanel gp) {
+  }
+
   // ----------------------- STATE OF THE CHARACTER -----------------------
+
+  public void update() {}
   public boolean alive = true;
+  public int solidAreaDefaultX, solidAreaDefaultY;
+
 
   // ----------------------- CHARACTER ATTRIBUTES -----------------------
-
+  //Marty
   public int life;
   public int maxLife;
   public int attack;

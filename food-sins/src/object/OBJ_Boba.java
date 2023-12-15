@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.Objects;
 
 import javax.imageio.ImageIO;
-
+//Jennie
 public class OBJ_Boba extends SuperObject{
     //constructor
     public OBJ_Boba(){

@@ -33,7 +33,8 @@ public class Player extends Entity {
 
   public Player(GamePanel gp, KeyHandler keyH) 
   {
-    this.gp = gp;
+      super(gp);
+      this.gp = gp;
     this.keyH = keyH;
 
     // camera set up
