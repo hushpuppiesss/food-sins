@@ -40,8 +40,6 @@ public class GamePanel extends JPanel implements Runnable{
     // ----------------------- WORLD MAP SETTINGS -----------------------
     public final int maxWorldCol = 50;
     public final int maxWorldRow = 50;
-    public final int worldWidth = tileSize * maxWorldCol;
-    public final int worldHeight = tileSize * maxWorldRow;
 
     // ----------------------- FPS -----------------------
     int FPS = 32;
@@ -52,19 +50,29 @@ public class GamePanel extends JPanel implements Runnable{
     TileManager tileM = new TileManager(this);
     // instantiating the key handler
     KeyHandler keyH = new KeyHandler();
-    // creating the game clock
-    Thread gameThread;
+    // sound class
+    Sound music = new Sound();
+    Sound sfx = new Sound();
+
     // collision checker
     public CollisionChecker cChecker = new CollisionChecker(this);
+
+    // declaring the position handler
+    public PositionHandler PosH = new PositionHandler(this);
+
+    public UI ui = new UI(this);
+
+    // creating the game clock
+    Thread gameThread;
+
     // Allows for usage of key handler and game panel fom player.jav
     public Player player = new Player(this,keyH);
 
     //declaring the super object class, there can be a maximum of 10 objects appearings at once
-    //Jennie
+    // Jennie
     public SuperObject[] obj = new SuperObject[10];
 
-    // declaring the position handler
-    public PositionHandler PosH = new PositionHandler(this);
+
 
     // ----------------------- GAME STATE -----------------------
     public  int gameState;
@@ -83,7 +91,11 @@ public class GamePanel extends JPanel implements Runnable{
     }
     //set object method
     public void setupGame(){
+
         PosH.setObject();
+
+        // plays the background music
+        playMusic(0);
     }
 
 
@@ -146,22 +158,45 @@ public class GamePanel extends JPanel implements Runnable{
         super.paintComponent(g);
 
         Graphics2D g2 = (Graphics2D)g;
-        //Tile
+        // Tile
         tileM.draw(g2);
-        //player
+        // player
         player.draw(g2);
-        //buff
+        // buff
         for(int i=0;i<obj.length; i++){
             if(obj[i] != null){
                 obj[i].draw(g2,this);
             }
         }
+        // draws the ui
+        ui.draw(g2);
 
         g2.dispose(); // disposes of graphic context & releases systems resources to save memory
     }
+
+    // ----------------------- SOUND METHODS -----------------------
+    public void playMusic (int i) {
+        // calls setfile from sound class
+        music.setFile(i);
+        // calls play method and to loop it for background music
+        music.play();
+        music.loop();
+    }
+
+    public void stopMusic() {
+        // calls stop method from sound class
+        music.stop();
+    }
+
+    public void playerSFX(int i) {
+        // plays player sound effects
+        sfx.setFile(i);
+        sfx.play();
+    }
+
     // entity and object
-    public ArrayList<Entity> projectileList = new ArrayList<>();
-    public ArrayList<Entity> entityList = new ArrayList<>();
+    public ArrayList<Entity> projectileList = new ArrayList <> ();
+    public ArrayList<Entity> entityList = new ArrayList <> ();
 
     // ADD ENTITIES TO THE LIST
 //    for (int i = 0; i < projectileList.size(); i++){

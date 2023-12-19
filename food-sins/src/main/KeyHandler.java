@@ -2,7 +2,7 @@ package main;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-
+//Rachel and Marty(added shotKeyPressed)
 // key listener, interface that receives keystrokes
 public class KeyHandler implements KeyListener {
 

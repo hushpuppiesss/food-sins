@@ -6,9 +6,9 @@
 
 package main;
 
-import object.Boba;
-import object.Broccoli;
-import object.Pudding;
+import object.OBJ_Boba;
+import object.OBJ_Broccoli;
+import object.OBJ_Pudding;
 
 public class PositionHandler {
     GamePanel gp;
@@ -20,17 +20,17 @@ public class PositionHandler {
     // public PositionHandler PosH = new PositionHandler(this)
     public void setObject(){
         //pulling it from the subclass into an array
-        gp.obj[0]=new Boba();
+        gp.obj[0]=new OBJ_Boba();
         //placing it in the coordinates on the map
         //maybe change to random in the future?
         gp.obj[0].worldX = 10 * gp.tileSize;
         gp.obj[0].worldY = 20 * gp.tileSize;
         //a pudding
-        gp.obj[2]=new Pudding();
+        gp.obj[2]=new OBJ_Pudding();
         gp.obj[2].worldX = 20 * gp.tileSize;
         gp.obj[2].worldY = 20 * gp.tileSize;
         // a broccoli
-        gp.obj[1]=new Broccoli();
+        gp.obj[1]=new OBJ_Broccoli();
         gp.obj[1].worldX = 5 * gp.tileSize;
         gp.obj[1].worldY = 5 * gp.tileSize;
     }
